@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5b6n2hlm5o4x"
+path="res://.godot/imported/crate_lid.obj-c2a0d331b15a7336fc143f844474a7ae.mesh"
+
+[deps]
+
+files=["res://.godot/imported/crate_lid.obj-c2a0d331b15a7336fc143f844474a7ae.mesh"]
+
+source_file="res://assets/kaykit_restaurant_bits/obj/crate_lid.obj"
+dest_files=["res://.godot/imported/crate_lid.obj-c2a0d331b15a7336fc143f844474a7ae.mesh", "res://.godot/imported/crate_lid.obj-c2a0d331b15a7336fc143f844474a7ae.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

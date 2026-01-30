@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dxiag5ug8y8s6"
+path="res://.godot/imported/pot_large.obj-04f0110fb3d48aaabe2f564e9cfc34cb.mesh"
+
+[deps]
+
+files=["res://.godot/imported/pot_large.obj-04f0110fb3d48aaabe2f564e9cfc34cb.mesh"]
+
+source_file="res://assets/kaykit_restaurant_bits/obj/pot_large.obj"
+dest_files=["res://.godot/imported/pot_large.obj-04f0110fb3d48aaabe2f564e9cfc34cb.mesh", "res://.godot/imported/pot_large.obj-04f0110fb3d48aaabe2f564e9cfc34cb.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

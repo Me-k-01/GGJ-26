@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://bexwmaua0h2h2"
+path="res://.godot/imported/cactus_small_A.obj-e553944991243eb9a16e0e21386c2cad.mesh"
+
+[deps]
+
+files=["res://.godot/imported/cactus_small_A.obj-e553944991243eb9a16e0e21386c2cad.mesh"]
+
+source_file="res://assets/kaykit_furniture_bits/obj/cactus_small_A.obj"
+dest_files=["res://.godot/imported/cactus_small_A.obj-e553944991243eb9a16e0e21386c2cad.mesh", "res://.godot/imported/cactus_small_A.obj-e553944991243eb9a16e0e21386c2cad.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
