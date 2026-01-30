@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://bb3fj5okwxchm"]
+
+[ext_resource type="ArrayMesh" uid="uid://cq8ofhvdp7cpw" path="res://assets/kaykit_city_builder_bits/obj/car_police.obj" id="1_p2c4h"]
+[ext_resource type="ArrayMesh" uid="uid://bavppsy8urp60" path="res://assets/kaykit_city_builder_bits/obj/car_police_wheel_front_left.obj" id="2_bg4q5"]
+
+[node name="CarPolice" type="MeshInstance3D" unique_id=544559362]
+transform = Transform3D(9.615665, 0, 0, 0, 9.615665, 0, 0, 0, 9.615665, 0, 0, 0)
+mesh = ExtResource("1_p2c4h")
+
+[node name="CarPoliceWheelFrontLeft" type="MeshInstance3D" parent="." unique_id=633894821]
+transform = Transform3D(0.9111205, 0, 0, 0, 0.9111205, 0, 0, 0, 0.9111205, 0.020327201, -0.006511376, 0.027958667)
+mesh = ExtResource("2_bg4q5")
+
+[node name="CarPoliceWheelFrontLeft2" type="MeshInstance3D" parent="." unique_id=1758994333]
+transform = Transform3D(-0.8297972, 0, -0.023888467, 0, 0.83014095, 0, 0.023888467, 0, -0.8297972, -0.028755536, -0.0077741104, 0.44127417)
+mesh = ExtResource("2_bg4q5")
+skeleton = NodePath("../CarPoliceWheelFrontLeft")
+
+[node name="CarPoliceWheelFrontLeft3" type="MeshInstance3D" parent="." unique_id=1701710613]
+transform = Transform3D(-0.7560452, 0, -0.021765271, 0, 0.7563585, 0, 0.021765271, 0, -0.7560452, -0.05517668, -0.00038106833, -0.08408443)
+mesh = ExtResource("2_bg4q5")
+skeleton = NodePath("../CarPoliceWheelFrontLeft4")
+
+[node name="CarPoliceWheelFrontLeft4" type="MeshInstance3D" parent="." unique_id=1562336896]
+transform = Transform3D(0.8301407, 0, 0, 0, 0.8301407, 0, 0, 0, 0.8301407, 0.038847733, 0.00076943485, -0.46066466)
+mesh = ExtResource("2_bg4q5")
+skeleton = NodePath("../CarPoliceWheelFrontLeft")
