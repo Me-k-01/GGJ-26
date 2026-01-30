@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=4 uid="uid://cffjduipbb3s5"]
+[gd_scene format=4 uid="uid://cffjduipbb3s5"]
 
 [ext_resource type="Script" uid="uid://c2si8gkbnde0c" path="res://scripts/player.gd" id="1_tdh26"]
 [ext_resource type="Texture2D" uid="uid://bdg48m6l86q8i" path="res://assets/characters/player/3DGodotRobot_GodotPalette.png" id="1_w11jc"]
@@ -4780,7 +4780,7 @@ properties/3/path = NodePath("3DGodotRobot:rotation")
 properties/3/spawn = true
 properties/3/replication_mode = 1
 
-[node name="Player" type="CharacterBody3D" node_paths=PackedStringArray("_body", "_spring_arm_offset")]
+[node name="Player" type="CharacterBody3D" unique_id=763145713 node_paths=PackedStringArray("_body", "_spring_arm_offset")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 collision_mask = 3
 script = ExtResource("1_tdh26")
@@ -4791,20 +4791,20 @@ yellow_texture = ExtResource("3_l3dv8")
 green_texture = ExtResource("4_74ree")
 red_texture = ExtResource("5_qlefn")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=2129011921]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.066, 0.828, 0.01)
 shape = SubResource("CapsuleShape3D_mx45w")
 
-[node name="3DGodotRobot" type="Node3D" parent="." node_paths=PackedStringArray("_character", "animation_player")]
+[node name="3DGodotRobot" type="Node3D" parent="." unique_id=918983829 node_paths=PackedStringArray("_character", "animation_player")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0644093, -1.19209e-07, -0.035357)
 script = ExtResource("2_mexc5")
 _character = NodePath("..")
 animation_player = NodePath("AnimationPlayer")
 
-[node name="RobotArmature" type="Node3D" parent="3DGodotRobot"]
+[node name="RobotArmature" type="Node3D" parent="3DGodotRobot" unique_id=2033026344]
 transform = Transform3D(0.578472, 0, 0, 0, 0.578472, 0, 0, 0, 0.578472, 0, 0, 0)
 
-[node name="Skeleton3D" type="Skeleton3D" parent="3DGodotRobot/RobotArmature"]
+[node name="Skeleton3D" type="Skeleton3D" parent="3DGodotRobot/RobotArmature" unique_id=955304457]
 bones/0/name = "spine"
 bones/0/parent = -1
 bones/0/rest = Transform3D(1, 9.10383e-15, 2.38419e-07, 7.10847e-09, 0.999555, -0.0298151, -2.38313e-07, 0.0298151, 0.999556, 8.26265e-18, 0.90683, 0.0298551)
@@ -4981,51 +4981,49 @@ bones/24/position = Vector3(-1.90709e-08, 0.251469, -1.65948e-08)
 bones/24/rotation = Quaternion(-6.34575e-08, -0.980764, 0.195196, 1.82779e-06)
 bones/24/scale = Vector3(1, 1, 1)
 
-[node name="Bottom" type="MeshInstance3D" parent="3DGodotRobot/RobotArmature/Skeleton3D"]
+[node name="Bottom" type="MeshInstance3D" parent="3DGodotRobot/RobotArmature/Skeleton3D" unique_id=1360023397]
 mesh = SubResource("ArrayMesh_qcia5")
 skin = SubResource("Skin_llc6q")
 surface_material_override/0 = SubResource("StandardMaterial3D_53giy")
 
-[node name="Chest" type="MeshInstance3D" parent="3DGodotRobot/RobotArmature/Skeleton3D"]
+[node name="Chest" type="MeshInstance3D" parent="3DGodotRobot/RobotArmature/Skeleton3D" unique_id=1159250061]
 mesh = SubResource("ArrayMesh_fun53")
 skin = SubResource("Skin_hu16g")
 surface_material_override/0 = SubResource("StandardMaterial3D_kw1ok")
 
-[node name="Face" type="MeshInstance3D" parent="3DGodotRobot/RobotArmature/Skeleton3D"]
+[node name="Face" type="MeshInstance3D" parent="3DGodotRobot/RobotArmature/Skeleton3D" unique_id=1665156910]
 mesh = SubResource("ArrayMesh_fus4a")
 skin = SubResource("Skin_5h6fu")
 surface_material_override/0 = SubResource("StandardMaterial3D_krq4h")
 
-[node name="Llimbs and head" type="MeshInstance3D" parent="3DGodotRobot/RobotArmature/Skeleton3D"]
+[node name="Llimbs and head" type="MeshInstance3D" parent="3DGodotRobot/RobotArmature/Skeleton3D" unique_id=333871285]
 mesh = SubResource("ArrayMesh_0hcp6")
 skin = SubResource("Skin_gooby")
 surface_material_override/0 = SubResource("StandardMaterial3D_1ln88")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="3DGodotRobot"]
-libraries = {
-&"": SubResource("AnimationLibrary_f1v7x")
-}
-autoplay = "Idle"
+[node name="AnimationPlayer" type="AnimationPlayer" parent="3DGodotRobot" unique_id=434680344]
+libraries/ = SubResource("AnimationLibrary_f1v7x")
+autoplay = &"Idle"
 
-[node name="SpringArmOffset" type="Node3D" parent="." node_paths=PackedStringArray("_spring_arm")]
+[node name="SpringArmOffset" type="Node3D" parent="." unique_id=412680479 node_paths=PackedStringArray("_spring_arm")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("4_ygggd")
 _spring_arm = NodePath("SpringArm3D")
 
-[node name="SpringArm3D" type="SpringArm3D" parent="SpringArmOffset"]
+[node name="SpringArm3D" type="SpringArm3D" parent="SpringArmOffset" unique_id=858906869]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 spring_length = 5.0
 
-[node name="Camera3D" type="Camera3D" parent="SpringArmOffset/SpringArm3D"]
+[node name="Camera3D" type="Camera3D" parent="SpringArmOffset/SpringArm3D" unique_id=960626366]
 current = true
 
-[node name="PlayerNick" type="Node3D" parent="."]
+[node name="PlayerNick" type="Node3D" parent="." unique_id=134145559]
 
-[node name="Nickname" type="Label3D" parent="PlayerNick"]
+[node name="Nickname" type="Label3D" parent="PlayerNick" unique_id=1143272255]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.97037, 0)
 billboard = 1
 outline_modulate = Color(0, 0, 0, 0.301961)
 text = "player name test"
 
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="."]
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1416238482]
 replication_config = SubResource("SceneReplicationConfig_wb3a5")
