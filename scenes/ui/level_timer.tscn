@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bq0imk0qydsb8"]
+
+[ext_resource type="Script" uid="uid://crl8e3i7aqdfj" path="res://level_timer.gd" id="1_787jb"]
+
+[node name="LevelTimer" type="Control" unique_id=1609803165 node_paths=PackedStringArray("timer", "timerTextLabel")]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_787jb")
+timer = NodePath("TimeNode")
+timerTextLabel = NodePath("TimerText")
+
+[node name="TimerText" type="Label" parent="." unique_id=792288176]
+layout_mode = 0
+offset_right = 56.0
+offset_bottom = 29.0
+text = "xx:xx"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TimeNode" type="Timer" parent="." unique_id=1553864622]
+wait_time = 65.0
+autostart = true
