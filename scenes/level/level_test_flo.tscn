@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://ccencq0lcd3ph" path="res://scenes/ui/multiplayer_chat_ui.tscn" id="4_qbi7d"]
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="5_xhif1"]
 [ext_resource type="ArrayMesh" uid="uid://dthfdyvwfl1b7" path="res://assets/kaykit_furniture_bits/obj/armchair_pillows.obj" id="6_vca7r"]
-[ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/level/car_police.tscn" id="7_ud7qy"]
+[ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/environment/car_police.tscn" id="7_ud7qy"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r5xs5"]
 size = Vector2(90, 90)
