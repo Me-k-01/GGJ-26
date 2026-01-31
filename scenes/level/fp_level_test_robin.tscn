@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://7f8x8eentt3c"]
+
+[ext_resource type="PackedScene" uid="uid://dugaivbj1o66n" path="res://scenes/level/level.tscn" id="1_al74w"]
+[ext_resource type="Script" uid="uid://di5oyfkrylyw2" path="res://scenes/fp_level/fp_level.gd" id="2_tpa1g"]
+[ext_resource type="PackedScene" uid="uid://cwkyc0nx53a6l" path="res://scenes/fp_level/fp_player.tscn" id="3_58ppo"]
+[ext_resource type="PackedScene" uid="uid://bim81osigfv7t" path="res://scenes/furnitures/evidence.tscn" id="4_tpa1g"]
+[ext_resource type="PackedScene" uid="uid://bb5lum52267yb" path="res://scenes/fp_level/fp_item.tscn" id="4_vs2w4"]
+[ext_resource type="Script" uid="uid://be7gmik21m8py" path="res://scenes/fp_level/fp_players_container.gd" id="5_7w4ww"]
+[ext_resource type="PackedScene" uid="uid://bcdmda45cbxaa" path="res://scenes/environment/house.tscn" id="6_52w7i"]
+[ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/environment/car_police.tscn" id="7_c5ah1"]
+[ext_resource type="PackedScene" uid="uid://78dta1tn0o7k" path="res://scenes/environment/police.tscn" id="11_58ppo"]
+
+[node name="FPLevel" unique_id=613154552 instance=ExtResource("1_al74w")]
+script = ExtResource("2_tpa1g")
+first_person_player_scene = ExtResource("3_58ppo")
+
+[node name="Evidence" parent="Environment/Floor/MeshInstance3D" parent_id_path=PackedInt32Array(346896880) index="0" unique_id=1783406762 instance=ExtResource("4_tpa1g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.0947356, 0.67346215, 0.09921646)
+
+[node name="Items" type="Node3D" parent="Environment" parent_id_path=PackedInt32Array(862527610) index="1" unique_id=2018215964]
+
+[node name="Item3" parent="Environment/Items" index="0" unique_id=1595605640 instance=ExtResource("4_vs2w4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0902553, 0.8714688, -9.697543)
+
+[node name="Item2" parent="Environment/Items" index="1" unique_id=239620749 instance=ExtResource("4_vs2w4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7429376, -16.255756)
+mass = 1.0
+
+[node name="Item" parent="Environment/Items" index="2" unique_id=1513276634 instance=ExtResource("4_vs2w4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6144063, -24.383635)
+
+[node name="PlayersContainer" parent="." index="1" unique_id=1969630333]
+script = ExtResource("5_7w4ww")
+
+[node name="Node3D" parent="." index="5" unique_id=339892515 instance=ExtResource("6_52w7i")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.490265, 0, 0)
+
+[node name="CarPolice" parent="." index="6" unique_id=544559362 instance=ExtResource("7_c5ah1")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.023838, 0.45990196, 0.882339)
+
+[node name="Police" parent="." index="7" unique_id=763145713 node_paths=PackedStringArray("evidence1") instance=ExtResource("11_58ppo")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -2.1570225, 0, 0)
+evidence1 = NodePath("../Environment/Floor/MeshInstance3D/Evidence")
