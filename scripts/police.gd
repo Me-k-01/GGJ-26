@@ -12,6 +12,15 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 var player_inventory: PlayerInventory
 
 @export var evidence1 : RigidBody3D
+@export var evidence2 : RigidBody3D
+@export var evidence3 : RigidBody3D
+@export var evidence4 : RigidBody3D
+@export var evidence5 : RigidBody3D
+@export var evidence6 : RigidBody3D
+@export var evidence7 : RigidBody3D
+@export var evidence8 : RigidBody3D
+@export var evidence9 : RigidBody3D
+@export var evidence10 : RigidBody3D
 
 @export_category("Objects")
 @export var _body: Node3D = null
@@ -340,19 +349,38 @@ func _add_starting_items():
 		player_inventory.add_item(potion, 3)
 
 func look_for_evidence():
+	var all_evidence = [evidence1, evidence2, evidence3, evidence4, 
+evidence5, evidence6, evidence7, evidence8,evidence9, evidence10]
 	var space_rid = get_world_3d().space
 	var space_state = PhysicsServer3D.space_get_direct_state(space_rid)
 	
-	var origin = self.position
-	var target = evidence1.global_position
-	var query = PhysicsRayQueryParameters3D.create(origin, target)
-	query.exclude = [self]
-	query.collide_with_areas = true
+	var eyes = Vector3(self.position.x, self.position.y+2.5, self.position.z)
+	var result = []
+	var sub_results; var target
+	var queries
+	print(all_evidence)
+	for evid:RigidBody3D in all_evidence :
+		sub_results = []
+		queries = []
+		target = evid.global_position
+		queries.append(PhysicsRayQueryParameters3D.create(eyes, target)); queries[0].exclude = [self]; queries[0].collide_with_areas = true
+		#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(0,0,.05))); queries[1].exclude = [self]; queries[1].collide_with_areas = true
+		#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(.05,0,0))); queries[2].exclude = [self]; queries[2].collide_with_areas = true
+		#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(0,0,-0.05))); queries[3].exclude = [self]; queries[3].collide_with_areas = true
+		#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(-.05,0,0))); queries[4].exclude = [self]; queries[4].collide_with_areas = true
+		
+		for query in queries:
+			sub_results.append(space_state.intersect_ray(query))
+		result.append(sub_results)
 	
-	var result = space_state.intersect_ray(query)
-	
-	if result:
-		if result.collider == evidence1 :
-			set_player_skin(SkinColor.RED)
-		else:
-			set_player_skin(SkinColor.GREEN)
+	#forme : [ (item1)[centre, haut, gauche, bas, droite], (item2)[centre, haut, gauche, bas, droite], ..]
+	set_player_skin(SkinColor.GREEN)
+	var n = 0
+	for sub_result_loop in result:
+		n += 1
+		for rayline in sub_result_loop :
+			for evid in all_evidence :
+				if rayline:
+					if rayline["collider"] == evid :
+						print("item ", n, " seen")
+						set_player_skin(SkinColor.RED)
