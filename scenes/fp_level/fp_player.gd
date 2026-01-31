@@ -103,6 +103,8 @@ func _input(event):
 	if not is_multiplayer_authority(): return
 	if Input.is_action_just_pressed("interact"):
 		request_interact.rpc()
+	if Input.is_action_just_released("interact"):
+		request_drop.rpc()
 	if Input.is_action_just_pressed("throw"):
 		request_throw.rpc()
 	
@@ -357,15 +359,17 @@ func _add_starting_items():
 @rpc("any_peer", "call_local", "reliable")
 func request_interact() -> void:
 	#if not multiplayer.is_server(): return
-	
-	if held_object != null:
-		_server_drop_object()
 
 	if interact_raycast.is_colliding():
 		var collider = interact_raycast.get_collider()
 		if collider is RigidBody3D:
 			if not _is_object_held_by_anyone(collider):
 				_server_pickup_object(collider)
+
+@rpc("any_peer", "call_local", "reliable")
+func request_drop() -> void : 
+	if held_object != null:
+		_server_drop_object()
 
 @rpc("any_peer", "call_local", "reliable")
 func request_throw() -> void:

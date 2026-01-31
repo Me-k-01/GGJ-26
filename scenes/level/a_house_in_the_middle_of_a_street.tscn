@@ -23,9 +23,6 @@
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3prau"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_tne2t"]
-size = Vector3(1.0390625, 1.2058105, 4.1794434)
-
 [sub_resource type="PlaneMesh" id="PlaneMesh_r5xs5"]
 size = Vector2(90, 90)
 
@@ -58,28 +55,62 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10.3
 [node name="kitchen bar" type="Node3D" parent="House/Static furnitures" unique_id=1277670819]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.490265, 0, 0)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=1127473099]
+[node name="Bar" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=1127473099]
 transform = Transform3D(1, 0, 0, 0, 1.3202213, 0, 0, 0, 4.1430035, 0.15276009, 0.6560254, 1.4965959)
 material_override = ExtResource("5_k2vv7")
 mesh = SubResource("BoxMesh_vwhm0")
 skeleton = NodePath("../../../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar/MeshInstance3D" unique_id=352624118]
+[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar/Bar" unique_id=352624118]
+collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/MeshInstance3D/StaticBody3D" unique_id=733600755]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/Bar/StaticBody3D" unique_id=733600755]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05287671, 0)
 shape = SubResource("ConvexPolygonShape3D_3prau")
 
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=545057280]
-transform = Transform3D(1.0744318, 0, 0, 0, 0.12708062, 0, 0, 0, 4.2329926, 0.15841872, 1.319215, 1.4777985)
+[node name="Wood Girder" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=50819558]
+transform = Transform3D(0.3, 0, 0, 0, -3.359, 2.6226834e-08, 0, -2.936531e-07, -0.3, 0.15276009, 2.6905913, -0.015465975)
+material_override = ExtResource("5_k2vv7")
 mesh = SubResource("BoxMesh_vwhm0")
 skeleton = NodePath("../../../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar" unique_id=1024156751]
+[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar/Wood Girder" unique_id=1459575509]
 collision_layer = 2
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/StaticBody3D" unique_id=882569050]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15337586, 0.7705859, 1.5359159)
-shape = SubResource("BoxShape3D_tne2t")
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/Wood Girder/StaticBody3D" unique_id=351390065]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0.0006607175, 0)
+shape = SubResource("ConvexPolygonShape3D_3prau")
+
+[node name="Wood Girder3" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=845876680]
+transform = Transform3D(0.29999998, 0, 0, 0, -1.5353173e-07, 0.29999995, 0, -3.512396, -1.3113414e-08, 0.15276009, 4.2202964, 1.8852267)
+material_override = ExtResource("5_k2vv7")
+mesh = SubResource("BoxMesh_vwhm0")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar/Wood Girder3" unique_id=194254231]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/Wood Girder3/StaticBody3D" unique_id=1785948637]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0.0006607175, 0)
+shape = SubResource("ConvexPolygonShape3D_3prau")
+
+[node name="Wood Girder2" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=828229281]
+transform = Transform3D(0.278, 0, 0, 0, -0.94599783, 0.19133794, 0, -0.89749885, -0.20167744, 0.15276009, 3.7495947, 0.4885695)
+material_override = ExtResource("5_k2vv7")
+mesh = SubResource("BoxMesh_vwhm0")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar/Wood Girder2" unique_id=1376204460]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/Wood Girder2/StaticBody3D" unique_id=931457504]
+transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0.0006607175, 0)
+shape = SubResource("ConvexPolygonShape3D_3prau")
+
+[node name="Bar Top" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=545057280]
+transform = Transform3D(1.0744318, 0, 0, 0, 0.12708062, 0, 0, 0, 4.2329926, 0.15841872, 1.319215, 1.4777985)
+mesh = SubResource("BoxMesh_vwhm0")
+skeleton = NodePath("../../../../..")
 
 [node name="CarPolice" parent="House" unique_id=544559362 instance=ExtResource("6_2yo3a")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.023838, 0.45990196, 0.882339)
