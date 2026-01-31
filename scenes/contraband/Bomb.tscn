@@ -63,7 +63,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_iivk3")
 
-[node name="RigidBody" type="RigidBody3D" unique_id=1595605640]
+[node name="Bomb" type="RigidBody3D" unique_id=1595605640]
 collision_layer = 5
 collision_mask = 6
 mass = 10.0
