@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dtjnybg88kp5r" path="res://scenes/environment/window.tscn" id="5_bhd32"]
 [ext_resource type="PackedScene" uid="uid://bwu3115o21uep" path="res://scenes/environment/roof.tscn" id="6_chqi5"]
 [ext_resource type="PackedScene" uid="uid://3wajgrje1e8c" path="res://scenes/environment/wall_door_static.tscn" id="6_fluca"]
+[ext_resource type="PackedScene" uid="uid://bvbn2vtc7n38b" path="res://assets/house/crime_scene_band.glb" id="8_bsh37"]
 
 [node name="Node3D" type="Node3D" unique_id=339892515]
 
@@ -39,9 +40,6 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.14
 
 [node name="Wall5" parent="." unique_id=92141914 instance=ExtResource("2_uu61i")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007200122, 0.10399058, -5.6920304)
-
-[node name="Wall Door2" parent="." unique_id=477348001 instance=ExtResource("4_cyva5")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.021199465, 0.13636374, -3.2816453)
 
 [node name="Wall4" parent="." unique_id=115119857 instance=ExtResource("3_7b786")]
 transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.539, 0.104, 3.6478531)
@@ -210,3 +208,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10759e-05, -9.536743e-07, 1
 
 [node name="Roof4" parent="Top floor outer wall" unique_id=1803795988 instance=ExtResource("6_chqi5")]
 transform = Transform3D(1.05, 0, 0, 0, 0.8674858, 0.5915812, 0, -0.5915812, 0.8674858, -0.32926628, -1.1346854, 0.021202356)
+
+[node name="Wall Door" parent="." unique_id=177244777 instance=ExtResource("6_fluca")]
+transform = Transform3D(0.9999466, 0.010332165, 0, -0.010332165, 0.9999466, 0, 0, 0, 1, -0.025221419, 0.13373092, -3.2954562)
+
+[node name="crime_scene_band" parent="." unique_id=1547526006 instance=ExtResource("8_bsh37")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.237661, 3.3014545, 1.6330733)
