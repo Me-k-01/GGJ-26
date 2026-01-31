@@ -353,6 +353,6 @@ func look_for_evidence():
 	
 	if result:
 		if result.collider == evidence1 :
-			print(result)
+			set_player_skin(SkinColor.RED)
 		else:
-			print("no")
+			set_player_skin(SkinColor.GREEN)
