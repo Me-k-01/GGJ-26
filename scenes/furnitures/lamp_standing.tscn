@@ -72,3 +72,6 @@ shape = SubResource("CylinderShape3D_30ct0")
 [node name="_CollisionShape3D" type="CollisionShape3D" parent="." unique_id=708734288]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.04229492, 0)
 shape = SubResource("CylinderShape3D_fulli")
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1129720001]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46355, 0)

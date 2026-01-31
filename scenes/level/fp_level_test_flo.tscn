@@ -4,10 +4,21 @@
 [ext_resource type="Script" uid="uid://di5oyfkrylyw2" path="res://scenes/fp_level/fp_level.gd" id="2_o4rqx"]
 [ext_resource type="PackedScene" uid="uid://cwkyc0nx53a6l" path="res://scenes/fp_level/fp_player.tscn" id="3_440xv"]
 [ext_resource type="Script" uid="uid://b1l5nshqpqc0d" path="res://scenes/fp_level/fp_players_container.gd" id="5_j0dcn"]
+[ext_resource type="Material" uid="uid://dynj3k4up3le6" path="res://assets/contraband/interactible.tres" id="5_kw140"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_wcf3h"]
 
 [node name="FPLevel" unique_id=613154552 instance=ExtResource("1_a1ha7")]
 script = ExtResource("2_o4rqx")
 first_person_player_scene = ExtResource("3_440xv")
 
+[node name="Environment" parent="." index="0" unique_id=81015645]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15816188, 0.022239447, 0.052072406)
+
 [node name="PlayersContainer" parent="." index="1" unique_id=1969630333]
 script = ExtResource("5_j0dcn")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." index="5" unique_id=1242705608]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7491336, 0)
+material_override = ExtResource("5_kw140")
+mesh = SubResource("CapsuleMesh_wcf3h")
