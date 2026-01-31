@@ -7,6 +7,12 @@
 [ext_resource type="PackedScene" uid="uid://bclq8vh1x2goy" path="res://scenes/ui/inventory_ui.tscn" id="5_xhif1"]
 [ext_resource type="ArrayMesh" uid="uid://dthfdyvwfl1b7" path="res://assets/kaykit_furniture_bits/obj/armchair_pillows.obj" id="6_vca7r"]
 [ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/environment/car_police.tscn" id="7_ud7qy"]
+[ext_resource type="PackedScene" uid="uid://cor3sc0b83wvc" path="res://scenes/environment/wall_door.tscn" id="9_xj14o"]
+[ext_resource type="PackedScene" uid="uid://cmuii2vrmfnc5" path="res://assets/characters/player/3DGodotRobot.glb" id="10_jx75c"]
+[ext_resource type="PackedScene" uid="uid://bypjhhvtkv8sh" path="res://scenes/environment/big_window.tscn" id="10_xj14o"]
+[ext_resource type="PackedScene" uid="uid://lj0jesphi7n2" path="res://scenes/environment/wall2.tscn" id="11_jx75c"]
+[ext_resource type="ArrayMesh" uid="uid://5678vcpvm3on" path="res://assets/kaykit_furniture_bits/obj/couch.obj" id="13_jx75c"]
+[ext_resource type="PackedScene" uid="uid://d3v6k761a4rn" path="res://scenes/environment/wall1.tscn" id="14_rkdpc"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r5xs5"]
 size = Vector2(90, 90)
@@ -55,9 +61,45 @@ visible = false
 [node name="InventoryUI" parent="." unique_id=1200294158 instance=ExtResource("5_xhif1")]
 visible = false
 
+[node name="3DGodotRobot" parent="." unique_id=1680562767 instance=ExtResource("10_jx75c")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.9970884, 0.024999619, 5.5161715)
+
 [node name="ArmchairPillows" type="MeshInstance3D" parent="." unique_id=969255942]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4716244, 0.025000095, -0.69057107)
+transform = Transform3D(0.2167463, 0, 0.97622794, 0, 1, 0, -0.97622794, 0, 0.2167463, 0.81284237, 0.025000095, -0.9615424)
 mesh = ExtResource("6_vca7r")
 
 [node name="CarPolice" parent="." unique_id=544559362 instance=ExtResource("7_ud7qy")]
 transform = Transform3D(9.615665, 0, 0, 0, 9.615665, 0, 0, 0, 9.615665, -7.711215, 0.95712113, 3.279529)
+
+[node name="South Wall" type="Node3D" parent="." unique_id=312189684]
+
+[node name="Wall Door" parent="South Wall" unique_id=245533331 instance=ExtResource("9_xj14o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019288063, 0.1321421, -2.899376)
+
+[node name="Couch" type="MeshInstance3D" parent="." unique_id=580690289]
+transform = Transform3D(-0.9251899, 0, -0.37950474, 0, 1, 0, 0.37950474, 0, -0.9251899, 6.0536823, 0.025000095, 3.1662998)
+mesh = ExtResource("13_jx75c")
+
+[node name="Big Wall Window" parent="." unique_id=1772632751 instance=ExtResource("10_xj14o")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.027592659, 0.025000095, 1.1312985)
+
+[node name="Big Wall Window2" parent="." unique_id=1341632078 instance=ExtResource("10_xj14o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.194665, 0.025000572, -8.031202)
+
+[node name="Wall1" parent="." unique_id=1351682663 instance=ExtResource("14_rkdpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.8580136, 0.10399058, 3.3097034)
+
+[node name="Wall2" parent="." unique_id=1429196088 instance=ExtResource("11_jx75c")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 7.40928, 0.10399058, 1.0018537)
+
+[node name="Wall Door" parent="." unique_id=1518292126 instance=ExtResource("9_xj14o")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 10.170847, 0.102141865, 0.9990969)
+
+[node name="Wall3" parent="." unique_id=303051902 instance=ExtResource("14_rkdpc")]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3005524, 0.10399058, 4.1161795)
+
+[node name="Wall4" parent="." unique_id=897202838 instance=ExtResource("14_rkdpc")]
+transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 7.0496635, 0.10399058, 4.1295347)
+
+[node name="Wall5" parent="." unique_id=728852313 instance=ExtResource("14_rkdpc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007200122, 0.10399058, -6.056284)

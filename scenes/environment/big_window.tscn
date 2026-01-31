@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bypjhhvtkv8sh"]
+
+[ext_resource type="PackedScene" uid="uid://dtjnybg88kp5r" path="res://scenes/environment/window.tscn" id="1_jk1gm"]
+[ext_resource type="PackedScene" uid="uid://lj0jesphi7n2" path="res://scenes/environment/wall2.tscn" id="2_8c14d"]
+
+[node name="Big Wall Window" type="Node3D" unique_id=1772632751]
+
+[node name="Wall6" parent="." unique_id=245533331 instance=ExtResource("1_jk1gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.05, 0.14, 0.5669602)
+
+[node name="Wall3" parent="." unique_id=2068146658 instance=ExtResource("2_8c14d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.14, 1.0619601)
+
+[node name="Wall1" parent="." unique_id=730529067 instance=ExtResource("1_jk1gm")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.050369978, 0.135, 2.1039605)
+
+[node name="Wall4" parent="." unique_id=414759300 instance=ExtResource("2_8c14d")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.135, -3.62604)
