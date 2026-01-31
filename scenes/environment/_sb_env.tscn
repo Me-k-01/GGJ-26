@@ -1,0 +1,4 @@
+[gd_scene format=3 uid="uid://4pe0cdr42dh5"]
+
+[node name="StaticBody3D" type="StaticBody3D" unique_id=281782056]
+collision_layer = 2

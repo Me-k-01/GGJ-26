@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b5jjxxswkdeq"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_werio"]
+[ext_resource type="ArrayMesh" uid="uid://qohg4hesqymg" path="res://assets/kaykit_furniture_bits/obj/table_medium.obj" id="2_gjbjo"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gjbjo"]
+points = PackedVector3Array(0.9245822, 1, 0.9245822, -0.92374337, 0, -0.92374337, -0.9870488, 0.9859023, 0.9870488, 0.92374337, 0, 0.92374337, 0.9870087, 0.9859825, -0.9870087, 0.92374337, 0, -0.92374337, -0.92374337, 0, 0.92374337, -0.9870488, 0.9859023, -0.9870488, 0.9870087, 0.9859825, 0.9870087, -0.9244012, 1, -0.9244012, -0.9244012, 1, 0.9244012, 0.9245822, 1, -0.9245822, 0.929602, 0.9882691, -0.99173087, 0.89873177, 0.9882691, 0.99173087)
+
+[node name="Table Medium" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 15.0
+script = ExtResource("1_werio")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="TableMedium" type="MeshInstance3D" parent="." unique_id=1018667915]
+mesh = ExtResource("2_gjbjo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=216883250]
+shape = SubResource("ConvexPolygonShape3D_gjbjo")

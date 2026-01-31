@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dajesjc3clfk4"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_liyso"]
+[ext_resource type="ArrayMesh" uid="uid://dbx5xven1ye1c" path="res://assets/kaykit_furniture_bits/obj/table_low.obj" id="2_5dot8"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_5dot8"]
+points = PackedVector3Array(1.0760853, 0.49874496, 0.71021926, -1.104732, 0.285677, -0.7688984, -1.036447, 0.49780264, -0.72181326, -1.142678, 0.285677, 0.7546126, 0.86799026, 0.0045436826, -0.5625805, 1.0364461, 0.49780244, -0.7218126, -0.8788401, 0.0015052552, 0.55523765, 0.8788401, 0.0015052552, 0.55523765, -1.1174085, 0.4999562, 0.6775535, -0.86799026, 0.0045436826, -0.5625805, 1.2190475, 0.285677, -0.6545158, 1.142678, 0.285677, 0.7546126, -1.2190475, 0.285677, -0.6545158, 1.104732, 0.285677, -0.7688984, 1.1537416, 0.5, 0.6055494, 1.2190475, 0.285677, 0.64023, -1.2190475, 0.285677, 0.64023, -1.1537416, 0.5, -0.6198352, -0.9043022, 0.030566674, -0.621931, 0.89558923, 0.06850118, 0.637628, 1.1537416, 0.5, -0.6198352, 0.9043022, 0.030566674, -0.621931, -0.89558923, 0.06850118, 0.637628, -1.0760847, 0.49874482, 0.71021885, -1.1537416, 0.5, 0.6055494, 1.1808628, 0.285677, 0.7164354, -1.1808628, 0.285677, 0.7164354, 1.1174085, 0.4999562, 0.6775535)
+
+[node name="Table Low" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 15.0
+script = ExtResource("1_liyso")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="TableLow" type="MeshInstance3D" parent="." unique_id=714353723]
+mesh = ExtResource("2_5dot8")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1149483107]
+shape = SubResource("ConvexPolygonShape3D_5dot8")

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://5am2hcka5xt2"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_kw1r5"]
+[ext_resource type="ArrayMesh" uid="uid://bloxv4mwu6pr7" path="res://assets/kaykit_furniture_bits/obj/table_small.obj" id="2_nglv0"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_nglv0"]
+points = PackedVector3Array(-0.4477272, 0.021488713, -0.43227276, 0.49706218, 0.98142177, 0.48151603, 0.48152533, 0.9969258, 0.48154888, 0.48149222, 0.98142153, -0.49708623, -0.49706218, 0.98142177, 0.48151603, 0.43275684, 0.005534908, 0.432778, -0.48152533, 0.9969258, -0.48154888, 0.4477272, 0.021488713, -0.43227276, -0.43225127, 0.021489123, 0.4477487, -0.49200216, 0.8014413, -0.50793654, 0.49200216, 0.8014413, 0.50793654, -0.5079117, 0.8014413, 0.4920262, 0.5079117, 0.8014413, -0.4920262, 0.5079117, 0.8014413, 0.4920262, -0.43275684, 0.005534908, -0.432778, 0.43225127, 0.021489123, -0.4477487, -0.5079117, 0.8014413, -0.4920262, -0.49200216, 0.8014413, 0.50793654, 0.49200216, 0.8014413, -0.50793654, 0.48152533, 0.9969258, -0.48154888, -0.48152533, 0.9969258, 0.48154888, -0.43275684, 0.005534908, 0.432778, 0.43275684, 0.005534908, -0.432778, 0.4477272, 0.021488713, 0.43227276, -0.4477272, 0.021488713, 0.43227276, 0.43225127, 0.021489123, 0.4477487, -0.43225127, 0.021489123, -0.4477487, -0.48149222, 0.98142153, 0.49708623, -0.49706218, 0.98142177, -0.48151603, 0.49706218, 0.98142177, -0.48151603, -0.48149222, 0.98142153, -0.49708623, 0.48149222, 0.98142153, 0.49708623)
+
+[node name="Table Small" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 6.0
+script = ExtResource("1_kw1r5")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="TableSmall" type="MeshInstance3D" parent="." unique_id=347479201]
+mesh = ExtResource("2_nglv0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=592708459]
+shape = SubResource("ConvexPolygonShape3D_nglv0")

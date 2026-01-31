@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://tv2qnmts6imr"]
+
+[ext_resource type="ArrayMesh" uid="uid://bhqpxqwg2c7qi" path="res://assets/kaykit_furniture_bits/obj/shelf_A_big.obj" id="1_yux0t"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ay50o"]
+points = PackedVector3Array(0.9840524, 0.12852794, 0.49206042, -1.0158731, -0.31582952, -0.015873015, -1.0158731, -0.31582952, 0.2064238, 1.0158731, -0.31582952, -0.015873015, -0.9840524, 0.12852794, -0.015873015, -0.9840524, 0.12852794, 0.49206042, 0.9840524, 0.12852794, -0.015873015, 1.0158731, -0.09365078, 0.52380955, -1.0158731, -0.09365078, 0.52380955, 1.0158731, -0.31582952, 0.2064238, 1.0158731, -0.12535954, 0.49206042, -1.0158731, -0.12535954, 0.49206042, 0.9262371, 0.07997335, 0.5, -0.9262371, 0.07997335, 0.5)
+
+[node name="Big Shelf" type="StaticBody3D" unique_id=1932112579]
+collision_layer = 2
+
+[node name="ShelfABig" type="MeshInstance3D" parent="." unique_id=314935324]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3797177, 0, -0.47535777)
+mesh = ExtResource("1_yux0t")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1946315210]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.3797177, 0, -0.47535777)
+shape = SubResource("ConvexPolygonShape3D_ay50o")

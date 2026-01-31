@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://cprqhhlghuox"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_yql6b"]
+[ext_resource type="ArrayMesh" uid="uid://c5srswghf23j1" path="res://assets/kaykit_furniture_bits/obj/chair_stool.obj" id="2_fdtbo"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_1f6yf"]
+points = PackedVector3Array(0.3694223, 0.46352404, 0.32315308, -0.33243266, 0.33593726, -0.36683893, -0.35464096, 0.32433873, -0.35457122, 0.31115916, 0.0022658727, -0.3111067, -0.31116515, 0.0022685206, 0.31110337, -0.35547492, 0.4850244, 0.33249187, 0.33257404, 0.48504263, -0.35543257, 0.3111394, 0.013777478, 0.32263806, -0.31116515, 0.0022685206, -0.31110337, -0.3328267, 0.4967629, -0.32132858, 0.33257404, 0.48504263, 0.35543257, -0.33243266, 0.33593726, 0.36683893, 0.36684737, 0.33592457, -0.33238965, -0.36683294, 0.335919, 0.33236817, 0.33287483, 0.49675217, 0.3213146, 0.33248007, 0.33593336, -0.36682227, 0.33248007, 0.33593336, 0.36682227, -0.35740206, 0.46325088, -0.35733178, 0.32269186, 0.01377805, 0.31108618, -0.32139778, 0.49676713, 0.33283857, 0.33287483, 0.49675217, -0.3213146, 0.31115916, 0.0022658727, 0.3111067, -0.3232617, 0.4635535, 0.36941013, 0.3111394, 0.013777478, -0.32263806, -0.32269773, 0.01378059, -0.31108284, 0.36684737, 0.33592457, 0.33238965, -0.36683294, 0.335919, -0.33236817, 0.3694223, 0.46352404, -0.32315308, -0.3232617, 0.4635535, -0.36941013, -0.3693933, 0.4635019, -0.32311958, -0.32269773, 0.01378059, 0.31108284, -0.31114537, 0.0137800025, -0.32263464)
+
+[node name="Stool" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 7.0
+script = ExtResource("1_yql6b")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="ChairStool" type="MeshInstance3D" parent="." unique_id=1661035851]
+mesh = ExtResource("2_fdtbo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=528358124]
+shape = SubResource("ConvexPolygonShape3D_1f6yf")
