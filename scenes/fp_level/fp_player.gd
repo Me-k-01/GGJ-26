@@ -13,6 +13,7 @@ var player_inventory: PlayerInventory
 @export_category("Mouvements")
 var locked_cursor = false
 @export var SENSITIVITY = 0.3
+#const HOLDING_SPEED = 2.0
 const NORMAL_SPEED = 6.0
 const SPRINT_SPEED = 10.0
 const JUMP_VELOCITY = 10
@@ -185,6 +186,7 @@ func _move() -> void:
 	var _direction: Vector3 = transform.basis * Vector3(_input_direction.x, 0, _input_direction.y).normalized()
 
 	is_running()
+	is_holding()
 
 	if _direction:
 		velocity.x = _direction.x * _current_speed
@@ -200,6 +202,14 @@ func is_running() -> bool:
 		return true
 	else:
 		_current_speed = NORMAL_SPEED
+		return false
+
+func is_holding() -> bool:
+	if held_object != null :
+		#_current_speed = HOLDING_SPEED
+		_current_speed = (NORMAL_SPEED / 3) + min(NORMAL_SPEED / 2, (NORMAL_SPEED / 2) / (held_object.mass / 10))
+		return true
+	else :
 		return false
 
 func _check_fall_and_respawn():
@@ -366,7 +376,8 @@ func _apply_holding_physics() -> void:
 	
 	var target_velocity = (target_pos - current_pos) * follow_speed
 	var velocity_change = target_velocity - held_object.linear_velocity
-	held_object.apply_central_impulse(velocity_change * held_object.mass)
+	#held_object.apply_central_impulse(velocity_change * held_object.mass)
+	held_object.apply_central_impulse(velocity_change)
 
 	var current_ang_vel = held_object.angular_velocity
 	var angular_change = (current_ang_vel * 0.9) - current_ang_vel
