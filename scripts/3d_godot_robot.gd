@@ -12,6 +12,10 @@ func apply_rotation(_velocity: Vector3) -> void:
 	rotation.y = new_rotation_y
 
 func animate(_velocity: Vector3) -> void:
+	if _character.held_object != null :
+		animation_player.play("Blocking")
+		return
+
 	if not _character.is_on_floor():
 		if _velocity.y < 0:
 			animation_player.play("Jump_Idle")
