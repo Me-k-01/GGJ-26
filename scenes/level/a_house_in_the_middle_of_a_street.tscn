@@ -1,0 +1,134 @@
+[gd_scene format=3 uid="uid://dlf24ftvt1q16"]
+
+[ext_resource type="PackedScene" uid="uid://bcdmda45cbxaa" path="res://scenes/environment/house_walls.tscn" id="1_u3uc2"]
+[ext_resource type="PackedScene" uid="uid://tv2qnmts6imr" path="res://scenes/environment/shelf_big.tscn" id="2_kjeh0"]
+[ext_resource type="PackedScene" uid="uid://tp3yhsqxlubm" path="res://scenes/environment/extractor_hood.tscn" id="3_fdg1j"]
+[ext_resource type="PackedScene" uid="uid://cil4f4ssbfp7l" path="res://scenes/environment/stove.tscn" id="4_b08bv"]
+[ext_resource type="Material" uid="uid://cq7miwwwdehxy" path="res://assets/house/wood2.tres" id="5_k2vv7"]
+[ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/environment/car_police.tscn" id="6_2yo3a"]
+[ext_resource type="PackedScene" uid="uid://c7aw3xn43pfaa" path="res://scenes/furnitures/pillow_a.tscn" id="7_esp5a"]
+[ext_resource type="PackedScene" uid="uid://b5jjxxswkdeq" path="res://scenes/furnitures/table_medium.tscn" id="8_q7bk5"]
+[ext_resource type="PackedScene" uid="uid://bww2c1y2aqgap" path="res://scenes/furnitures/couch.tscn" id="9_wyu6l"]
+[ext_resource type="PackedScene" uid="uid://bk020ww4i7127" path="res://scenes/furnitures/potted_plant.tscn" id="10_r3die"]
+[ext_resource type="PackedScene" uid="uid://5am2hcka5xt2" path="res://scenes/furnitures/table_small.tscn" id="11_dikc6"]
+[ext_resource type="PackedScene" uid="uid://dajesjc3clfk4" path="res://scenes/furnitures/table_low.tscn" id="12_8cog2"]
+[ext_resource type="PackedScene" uid="uid://dl3au1bt3ubnt" path="res://scenes/furnitures/fridge.tscn" id="13_b08bv"]
+[ext_resource type="PackedScene" uid="uid://bkql0fbpwfa7y" path="res://scenes/furnitures/fridge_door_bot.tscn" id="14_k2vv7"]
+[ext_resource type="PackedScene" uid="uid://d3df30yu2quld" path="res://scenes/furnitures/fridge_door_top.tscn" id="15_2yo3a"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_vwhm0"]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3prau"]
+points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_tne2t"]
+size = Vector3(1.0390625, 1.2058105, 4.1794434)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_r5xs5"]
+size = Vector2(90, 90)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o02aj"]
+albedo_color = Color(0, 0.321569, 0.172549, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3h1o"]
+size = Vector3(90, 0.05, 90)
+
+[sub_resource type="Environment" id="Environment_qb4jd"]
+fog_enabled = true
+
+[node name="Environment" type="Node3D" unique_id=81015645]
+
+[node name="House" type="Node3D" parent="." unique_id=1020156457]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122778416, 0.042997718, 1.1883917)
+
+[node name="Static furnitures" parent="House" unique_id=339892515 instance=ExtResource("1_u3uc2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.490265, 0, 0)
+
+[node name="Big Shelf" parent="House/Static furnitures" unique_id=1932112579 instance=ExtResource("2_kjeh0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.651673, 2.867838, -7.2822356)
+
+[node name="Extractor Hood" parent="House/Static furnitures" unique_id=281782056 instance=ExtResource("3_fdg1j")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.326048, 0.40311098, 5.5471125)
+
+[node name="Stove" parent="House/Static furnitures" unique_id=2074681560 instance=ExtResource("4_b08bv")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 8.305639, 0.025000095, 4.9328866)
+
+[node name="kitchen bar" type="Node3D" parent="House/Static furnitures" unique_id=1277670819]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.490265, 0, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=1127473099]
+transform = Transform3D(1, 0, 0, 0, 1.3202213, 0, 0, 0, 4.1430035, 0.15276009, 0.6560254, 1.4965959)
+material_override = ExtResource("5_k2vv7")
+mesh = SubResource("BoxMesh_vwhm0")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar/MeshInstance3D" unique_id=352624118]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/MeshInstance3D/StaticBody3D" unique_id=733600755]
+shape = SubResource("ConvexPolygonShape3D_3prau")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=545057280]
+transform = Transform3D(1.0744318, 0, 0, 0, 0.12708062, 0, 0, 0, 4.2329926, 0.15841872, 1.319215, 1.4777985)
+mesh = SubResource("BoxMesh_vwhm0")
+skeleton = NodePath("../../../../..")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar" unique_id=1024156751]
+collision_layer = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/StaticBody3D" unique_id=882569050]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15337586, 0.7705859, 1.5359159)
+shape = SubResource("BoxShape3D_tne2t")
+
+[node name="CarPolice" parent="House" unique_id=544559362 instance=ExtResource("6_2yo3a")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.023838, 0.45990196, 0.882339)
+skeleton = NodePath("../../..")
+
+[node name="Physics Furnitures" type="Node3D" parent="House" unique_id=1259720031]
+
+[node name="Pillow A" parent="House/Physics Furnitures" unique_id=1595605640 instance=ExtResource("7_esp5a")]
+transform = Transform3D(0.98237544, 0.052355304, -0.17943637, 0, 0.95997167, 0.2800971, 0.18691841, -0.27516052, 0.9430526, -3.9036932, 0.6220577, 2.7235637)
+
+[node name="Pillow A2" parent="House/Physics Furnitures" unique_id=793483775 instance=ExtResource("7_esp5a")]
+transform = Transform3D(0.98237544, 0.052355304, -0.17943637, 0, 0.95997167, 0.2800971, 0.18691841, -0.27516052, 0.9430526, -5.5427923, 0.6220577, 2.3749976)
+
+[node name="Table Medium" parent="House/Physics Furnitures" unique_id=1003219867 instance=ExtResource("8_q7bk5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3500084, 0.025000095, -8.044916)
+
+[node name="Couch" parent="House/Physics Furnitures" unique_id=158968226 instance=ExtResource("9_wyu6l")]
+transform = Transform3D(-0.98332167, 0, 0.18187504, 0, 1, 0, -0.18187504, 0, -0.98332167, -4.7294607, 0.025000095, 2.6588833)
+
+[node name="PottedPlant" parent="House/Physics Furnitures" unique_id=1577730166 instance=ExtResource("10_r3die")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6319876, 1.0411685, -6.746588)
+
+[node name="Table Small" parent="House/Physics Furnitures" unique_id=840554580 instance=ExtResource("11_dikc6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.620055, 0.025000095, -6.723326)
+
+[node name="Table Low" parent="House/Physics Furnitures" unique_id=614953863 instance=ExtResource("12_8cog2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9394975, 0.025000095, -0.20818305)
+
+[node name="Fridge" type="Node3D" parent="House/Physics Furnitures" unique_id=124143300]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.9302354, -0.0068187714, 3.8948836)
+
+[node name="Fridge" parent="House/Physics Furnitures/Fridge" unique_id=1613034497 instance=ExtResource("13_b08bv")]
+
+[node name="Fridge Door Bottom" parent="House/Physics Furnitures/Fridge" unique_id=1903810998 instance=ExtResource("14_k2vv7")]
+
+[node name="Fridge Door Top" parent="House/Physics Furnitures/Fridge" unique_id=252533880 instance=ExtResource("15_2yo3a")]
+
+[node name="Floor" type="StaticBody3D" parent="." unique_id=464707463]
+collision_layer = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Floor" unique_id=344966793]
+mesh = SubResource("PlaneMesh_r5xs5")
+surface_material_override/0 = SubResource("StandardMaterial3D_o02aj")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Floor" unique_id=135299518]
+shape = SubResource("BoxShape3D_x3h1o")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=2016235335]
+environment = SubResource("Environment_qb4jd")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=292864480]
+transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 4, 0)
+shadow_enabled = true
+shadow_blur = 0.5

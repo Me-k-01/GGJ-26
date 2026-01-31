@@ -3,97 +3,11 @@
 [ext_resource type="PackedScene" uid="uid://dugaivbj1o66n" path="res://scenes/level/level.tscn" id="1_a1ha7"]
 [ext_resource type="Script" uid="uid://di5oyfkrylyw2" path="res://scenes/fp_level/fp_level.gd" id="2_o4rqx"]
 [ext_resource type="PackedScene" uid="uid://cwkyc0nx53a6l" path="res://scenes/fp_level/fp_player.tscn" id="3_440xv"]
-[ext_resource type="PackedScene" uid="uid://bb5lum52267yb" path="res://scenes/fp_level/fp_item.tscn" id="4_pgexn"]
 [ext_resource type="Script" uid="uid://b1l5nshqpqc0d" path="res://scenes/fp_level/fp_players_container.gd" id="5_j0dcn"]
-[ext_resource type="PackedScene" uid="uid://bcdmda45cbxaa" path="res://scenes/environment/house.tscn" id="6_hlei0"]
-[ext_resource type="PackedScene" uid="uid://bww2c1y2aqgap" path="res://scenes/furnitures/couch.tscn" id="7_axmcd"]
-[ext_resource type="PackedScene" uid="uid://bk020ww4i7127" path="res://scenes/furnitures/potted_plant.tscn" id="9_3prau"]
-[ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/environment/car_police.tscn" id="9_vwhm0"]
-[ext_resource type="Material" uid="uid://cq7miwwwdehxy" path="res://assets/house/wood2.tres" id="10_3prau"]
-[ext_resource type="PackedScene" uid="uid://5am2hcka5xt2" path="res://scenes/furnitures/table_small.tscn" id="11_tne2t"]
-[ext_resource type="PackedScene" uid="uid://tv2qnmts6imr" path="res://scenes/environment/shelf_big.tscn" id="12_0uu17"]
-[ext_resource type="PackedScene" uid="uid://dajesjc3clfk4" path="res://scenes/furnitures/table_low.tscn" id="13_bffmk"]
-[ext_resource type="PackedScene" uid="uid://c7aw3xn43pfaa" path="res://scenes/furnitures/pillow_a.tscn" id="14_jnm5t"]
-[ext_resource type="PackedScene" uid="uid://b5jjxxswkdeq" path="res://scenes/furnitures/table_medium.tscn" id="15_bffmk"]
-
-[sub_resource type="BoxMesh" id="BoxMesh_vwhm0"]
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3prau"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_tne2t"]
-size = Vector3(1.0390625, 1.2058105, 4.1794434)
 
 [node name="FPLevel" unique_id=613154552 instance=ExtResource("1_a1ha7")]
 script = ExtResource("2_o4rqx")
 first_person_player_scene = ExtResource("3_440xv")
 
-[node name="Items" type="Node3D" parent="Environment" parent_id_path=PackedInt32Array(862527610) index="1" unique_id=2018215964]
-
-[node name="Item3" parent="Environment/Items" index="0" unique_id=1595605640 instance=ExtResource("4_pgexn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.0902553, 0.8714688, -12.84582)
-
-[node name="Item2" parent="Environment/Items" index="1" unique_id=239620749 instance=ExtResource("4_pgexn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7429376, -16.255756)
-mass = 1.0
-
-[node name="Item" parent="Environment/Items" index="2" unique_id=1513276634 instance=ExtResource("4_pgexn")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6144063, -24.383635)
-
 [node name="PlayersContainer" parent="." index="1" unique_id=1969630333]
 script = ExtResource("5_j0dcn")
-
-[node name="Node3D" parent="." index="5" unique_id=339892515 instance=ExtResource("6_hlei0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.490265, 0, 0)
-
-[node name="CarPolice" parent="." index="6" unique_id=544559362 instance=ExtResource("9_vwhm0")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.023838, 0.45990196, 0.882339)
-
-[node name="Couch" parent="." index="7" unique_id=1841018592 instance=ExtResource("7_axmcd")]
-transform = Transform3D(-0.98332167, 0, 0.18187504, 0, 1, 0, -0.18187504, 0, -0.98332167, -4.7294607, 0.025000095, 2.6588833)
-
-[node name="PottedPlant" parent="." index="8" unique_id=2082028984 instance=ExtResource("9_3prau")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6319876, 1.0411685, -6.746588)
-
-[node name="kitchen bar" type="Node3D" parent="." index="9" unique_id=1788603548]
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="kitchen bar" index="0" unique_id=697683374]
-transform = Transform3D(1, 0, 0, 0, 1.3202213, 0, 0, 0, 4.1430035, 0.15276009, 0.6560254, 1.4965959)
-material_override = ExtResource("10_3prau")
-mesh = SubResource("BoxMesh_vwhm0")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="kitchen bar/MeshInstance3D" index="0" unique_id=1208429287]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="kitchen bar/MeshInstance3D/StaticBody3D" index="0" unique_id=1882712946]
-shape = SubResource("ConvexPolygonShape3D_3prau")
-
-[node name="MeshInstance3D2" type="MeshInstance3D" parent="kitchen bar" index="1" unique_id=375688108]
-transform = Transform3D(1.0744318, 0, 0, 0, 0.12708062, 0, 0, 0, 4.2329926, 0.15841872, 1.319215, 1.4777985)
-mesh = SubResource("BoxMesh_vwhm0")
-skeleton = NodePath("../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="kitchen bar" index="2" unique_id=1073674231]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="kitchen bar/StaticBody3D" index="0" unique_id=1429631976]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.15337586, 0.7705859, 1.5359159)
-shape = SubResource("BoxShape3D_tne2t")
-
-[node name="Table Small" parent="." index="10" unique_id=243414206 instance=ExtResource("11_tne2t")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.620055, 0.025000095, -6.723326)
-
-[node name="Big Shelf" parent="." index="11" unique_id=1932112579 instance=ExtResource("12_0uu17")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.8385918, 2.867838, -7.2822356)
-
-[node name="Table Low" parent="." index="12" unique_id=2119231214 instance=ExtResource("13_bffmk")]
-transform = Transform3D(0.5556842, 0, 0, 0, 1, 0, 0, 0, 0.4896754, -4.1975884, 0.025000095, -0.7030225)
-
-[node name="Pillow A" parent="." index="13" unique_id=1105448140 instance=ExtResource("14_jnm5t")]
-transform = Transform3D(0.98237544, 0.052355304, -0.17943637, 0, 0.95997167, 0.2800971, 0.18691841, -0.27516052, 0.9430526, -3.9036932, 0.6220577, 2.7235637)
-
-[node name="Pillow A2" parent="." index="14" unique_id=2124868898 instance=ExtResource("14_jnm5t")]
-transform = Transform3D(0.98237544, 0.052355304, -0.17943637, 0, 0.95997167, 0.2800971, 0.18691841, -0.27516052, 0.9430526, -5.5427923, 0.6220577, 2.3749976)
-
-[node name="Table Medium" parent="." index="15" unique_id=645491168 instance=ExtResource("15_bffmk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.3500084, 0.025000095, -8.044916)

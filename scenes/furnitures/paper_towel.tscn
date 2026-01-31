@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dwwdrk2kc6d8k"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_fb1uk"]
+[ext_resource type="ArrayMesh" uid="uid://djbpn6gt2lrty" path="res://assets/kaykit_restaurant_bits/obj/papertowel.obj" id="2_ubces"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ubces"]
+points = PackedVector3Array(0.14979644, 0.14999999, 0.10601038, -0.19301265, 0.14999999, -0.02609754, -0.19301265, 0.14999999, 0.019296542, -0.054141708, 0.92105234, -0.039624166, 0.036026314, 0.14999999, -0.20076181, -0.036806893, 0.77068853, 0.163782, 0.16378024, 0.7706861, -0.036806546, -0.06343208, 0.7702301, -0.1568982, -0.05645924, 0.14999999, 0.18617454, -0.15667465, 0.75654393, 0.06988136, 0.0837698, 0.7713601, 0.15083562, 0.1709937, 0.14999999, -0.10196467, 0.09602627, 0.76870763, -0.14262304, -0.16912052, 0.14999999, -0.12175517, -0.15689509, 0.77022535, -0.06343086, 0.049658243, 0.14999999, 0.18617454, 0.07633867, 0.9064553, 0.018304009, 0.16377401, 0.75728625, 0.043387152, -0.16261384, 0.14999999, 0.11030741, 0.18617454, 0.14999999, 0.049658243, -0.08992136, 0.75627065, 0.14967863, -0.12175517, 0.14999999, -0.16912052, -0.054141708, 0.9064553, 0.061821133, 0.0033073982, 0.7724015, -0.17184421, -0.17184584, 0.7724038, 0.0033074636, 0.061821133, 0.9064553, -0.054141708, 0.1508362, 0.771361, 0.083770126, 0.09516367, 0.14999999, 0.1709937, -0.1448969, 0.7724972, -0.090997435, -0.20076181, 0.14999999, 0.036026314, 0.14967863, 0.75627065, -0.08992136, 0.11030741, 0.14999999, -0.16261384)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_meahb"]
+points = PackedVector3Array(0.111668184, 0.11990978, 0.22007293, -0.036352143, 0, -0.23417664, -0.12864615, 1.3877788e-17, -0.20779401, -0.11478159, 0.14458276, -0.19337726, -0.20779401, 1.3877788e-17, 0.12180807, 0.22733855, 0, -0.049543455, 0.18976079, 0.14580485, -0.11667026, -0.19550258, 0.14538898, 0.10914409, 0.055851508, 0, 0.22733855, -0.24003361, 0.119824216, -0.037188035, -0.08920711, 0.14512356, 0.20112468, 0.22007293, 0.11990978, 0.111668184, 0.084718354, 0.119991295, -0.22729547, 0.20091075, 0, 0.1349542, 0.12180807, 1.3877788e-17, -0.20779401, -0.20779401, 1.3877788e-17, -0.12864615, 0.1868195, 0.1446891, 0.121189006, -0.12864615, 0, 0.20091075, -0.13056856, 0.119361535, -0.21093144, -0.049263496, 0.13149746, 0.22593793, 0.21214922, 0.1313127, -0.10140055, -0.23417664, 0, 0.029468885, -0.20608754, 0.13136218, 0.12076247, -0.20780313, 0.13186024, -0.11550501, -0.037188035, 0.119824216, -0.24003361, 0.23453633, 0.12009225, 0.05770027, 0.016262723, 0.14499295, -0.22082129, 0.20091075, 0, -0.12864615, 0.12076247, 0.13136218, -0.20608754, -0.12761411, 0.1313686, 0.1992268, -0.24181075, 0.12017948, 0.03055691, 0.042589962, 0.14493708, 0.21381564)
+
+[node name="Paper Towel" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 10.0
+script = ExtResource("1_fb1uk")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="Papertowel" type="MeshInstance3D" parent="." unique_id=1046432523]
+mesh = ExtResource("2_ubces")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=303503136]
+shape = SubResource("ConvexPolygonShape3D_ubces")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1245831036]
+shape = SubResource("ConvexPolygonShape3D_meahb")

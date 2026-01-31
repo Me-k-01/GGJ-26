@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://d3df30yu2quld"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_px8ie"]
+[ext_resource type="ArrayMesh" uid="uid://dk6lmaieb6kco" path="res://assets/kaykit_restaurant_bits/obj/fridge_A_door_top.obj" id="2_a7sio"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_a7sio"]
+size = Vector3(0.47973633, 0.11249548, 0.35341495)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0h3ie"]
+size = Vector3(2, 1.000002, 0.4922089)
+
+[node name="Fridge Door Top" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 30.0
+script = ExtResource("1_px8ie")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="FridgeADoorTop" type="MeshInstance3D" parent="." unique_id=409877435]
+mesh = ExtResource("2_a7sio")
+
+[node name="CollisionShape3Handle" type="CollisionShape3D" parent="." unique_id=1738673078]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4864502, 1.7483394, 1.0633255)
+shape = SubResource("BoxShape3D_a7sio")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1680975408]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.999999, 0.7461045)
+shape = SubResource("BoxShape3D_0h3ie")

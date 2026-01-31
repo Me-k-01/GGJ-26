@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bkql0fbpwfa7y"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_o40lp"]
+[ext_resource type="ArrayMesh" uid="uid://bga46k430s4qt" path="res://assets/kaykit_restaurant_bits/obj/fridge_A_door_bottom.obj" id="2_o40lp"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_o40lp"]
+size = Vector3(0.4255371, 0.09387182, 0.63515323)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_dcc0y"]
+size = Vector3(2, 1.499998, 0.49001163)
+
+[node name="Fridge Door Bottom" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 30.0
+script = ExtResource("1_o40lp")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="FridgeADoorBottom" type="MeshInstance3D" parent="." unique_id=379231545]
+mesh = ExtResource("2_o40lp")
+
+[node name="CollisionShape3DHandle" type="CollisionShape3D" parent="." unique_id=1635563376]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49084473, 1.2448096, 0.9224564)
+shape = SubResource("BoxShape3D_o40lp")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=91899931]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.749998, 0.74500585)
+shape = SubResource("BoxShape3D_dcc0y")
