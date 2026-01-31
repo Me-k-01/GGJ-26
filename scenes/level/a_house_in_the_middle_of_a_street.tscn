@@ -27,23 +27,18 @@
 [ext_resource type="PackedScene" uid="uid://d07cc5da6rbaw" path="res://scenes/furnitures/lamp_standing.tscn" id="25_dcb4m"]
 [ext_resource type="PackedScene" uid="uid://cujou0ngjhhc2" path="res://scenes/furnitures/lamp.tscn" id="26_0uhm0"]
 [ext_resource type="Material" uid="uid://ctokw0pa0xp7" path="res://assets/house/wood.tres" id="27_0uhm0"]
+[ext_resource type="PackedScene" uid="uid://4pe0cdr42dh5" path="res://scenes/environment/_sb_env.tscn" id="27_wx1er"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vwhm0"]
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3prau"]
 points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_r5xs5"]
-size = Vector2(90, 90)
+[sub_resource type="BoxMesh" id="BoxMesh_vep5k"]
+size = Vector3(1.185, 0.17, 4.065)
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o02aj"]
-albedo_color = Color(0, 0.321569, 0.172549, 1)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_x3h1o"]
-size = Vector3(90, 0.05, 90)
-
-[sub_resource type="Environment" id="Environment_qb4jd"]
-fog_enabled = true
+[sub_resource type="BoxShape3D" id="BoxShape3D_wx1er"]
+size = Vector3(1.185, 0.17, 4.065)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_whsdd"]
 
@@ -79,6 +74,9 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_x5ner")
 
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vep5k"]
+points = PackedVector3Array(1.20285, 4.8012304, 2.210422, -1.1944, -0.7223145, -3.5010366, -1.2476722, 0.008367777, -3.6492724, -1.1944, 4.679025, 3.020698, 1.1797318, -0.79179996, 3.1045885, 1.20285, 0.008367777, -3.6492724, -1.1944, -0.7223145, 3.020698, -1.2476722, 4.801783, 2.2097545, 1.1797318, -0.79179996, -3.5849435, 1.1837052, 4.757123, 3.1162999, 1.20285, 2.7770739, -0.34597722, -1.2476722, 4.162256, 1.3573991, -1.2476722, 0.7534697, -2.796917, 1.20285, 0.7534697, -2.796917, 1.20285, 4.162256, 1.3580666, 1.0786304, 1.8211077, 3.1162999, -1.2476722, 2.7770739, -0.34597722, 1.0786304, 4.757123, 3.1162999, 1.1837052, 1.8211077, 3.1162999)
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l4vjj"]
 
 [sub_resource type="ArrayMesh" id="ArrayMesh_5vib6"]
@@ -111,6 +109,18 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_5vib6")
 
+[sub_resource type="PlaneMesh" id="PlaneMesh_r5xs5"]
+size = Vector2(90, 90)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o02aj"]
+albedo_color = Color(0, 0.321569, 0.172549, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_x3h1o"]
+size = Vector3(90, 0.05, 90)
+
+[sub_resource type="Environment" id="Environment_qb4jd"]
+fog_enabled = true
+
 [node name="Environment" type="Node3D" unique_id=81015645]
 
 [node name="House" type="Node3D" parent="." unique_id=1020156457]
@@ -132,7 +142,7 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10.3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.490265, 0, 0)
 
 [node name="Wood Girder" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=50819558]
-transform = Transform3D(0.3, 0, 0, 0, -4.7969313, 2.6226834e-08, 0, -4.1936104e-07, -0.3, 0.15276009, 2.0658407, -0.015465975)
+transform = Transform3D(0.3, 0, 0, 0, -4.7969313, 2.6226834e-08, 0, -4.1936104e-07, -0.3, 0.15276009, 1.8583318, -0.015465975)
 material_override = ExtResource("5_k2vv7")
 mesh = SubResource("BoxMesh_vwhm0")
 skeleton = NodePath("../../../../..")
@@ -145,7 +155,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 
 shape = SubResource("ConvexPolygonShape3D_3prau")
 
 [node name="Wood Girder3" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=845876680]
-transform = Transform3D(0.29999998, 0, 0, 0, -1.5353173e-07, 0.29999995, 0, -3.512396, -1.3113414e-08, 0.15276009, 4.2202964, 1.8852267)
+transform = Transform3D(0.29999998, 0, 0, 0, -1.5353173e-07, 0.29999995, 0, -3.512396, -1.3113414e-08, 0.15276009, 4.084958, 1.8852267)
 material_override = ExtResource("5_k2vv7")
 mesh = SubResource("BoxMesh_vwhm0")
 skeleton = NodePath("../../../../..")
@@ -158,7 +168,7 @@ transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 
 shape = SubResource("ConvexPolygonShape3D_3prau")
 
 [node name="Wood Girder2" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=828229281]
-transform = Transform3D(0.278, 0, 0, 0, -0.94599783, 0.19133794, 0, -0.89749885, -0.20167744, 0.15276009, 3.7495947, 0.4885695)
+transform = Transform3D(0.278, 0, 0, 0, -0.94599783, 0.19133794, 0, -0.89749885, -0.20167744, 0.15276009, 3.5377288, 0.49349356)
 material_override = ExtResource("5_k2vv7")
 mesh = SubResource("BoxMesh_vwhm0")
 skeleton = NodePath("../../../../..")
@@ -170,13 +180,37 @@ collision_layer = 2
 transform = Transform3D(0.99999994, 0, 0, 0, 0.9999999, 0, 0, 0, 0.99999994, 0, 0.0006607175, 0)
 shape = SubResource("ConvexPolygonShape3D_3prau")
 
-[node name="Bar Top" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=545057280]
-transform = Transform3D(1.0744318, 0, 0, 0, 0.12708062, 0, 0, 0, 4.2329926, 0.15841872, 1.319215, 1.4777985)
-mesh = SubResource("BoxMesh_vwhm0")
-skeleton = NodePath("../../../../..")
+[node name="Bar table" parent="House/Static furnitures/kitchen bar" unique_id=100885640 instance=ExtResource("27_wx1er")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar/Bar table" unique_id=190144355]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1569409, 1.2220445, 1.5891743)
+material_override = ExtResource("27_0uhm0")
+mesh = SubResource("BoxMesh_vep5k")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/Bar table" unique_id=70209571]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1569409, 1.2220445, 1.5891743)
+shape = SubResource("BoxShape3D_wx1er")
 
 [node name="Remote" parent="House/Static furnitures/kitchen bar" unique_id=1595605640 instance=ExtResource("6_esp5a")]
 transform = Transform3D(0.2933062, 0, -0.95601857, 0, 1, 0, 0.95601857, 0, 0.2933062, -5.1511297, 0.5768084, 1.9783814)
+
+[node name="Stairs" parent="House/Static furnitures" unique_id=473375182 instance=ExtResource("27_wx1er")]
+transform = Transform3D(0.665, 0, 0, 0, 0.665, 0, 0, 0, 0.665, 6.969302, 0.0066890568, -2.1239283)
+
+[node name="Cube" type="MeshInstance3D" parent="House/Static furnitures/Stairs" unique_id=1154229587]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5079837, 0.6103276, -3.2856402)
+mesh = SubResource("ArrayMesh_6pks0")
+skeleton = NodePath("")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/Stairs" unique_id=837740776]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5079837, 0.6103276, -3.2856402)
+shape = SubResource("ConvexPolygonShape3D_vep5k")
+
+[node name="Cube_001" type="MeshInstance3D" parent="House/Static furnitures/Stairs" unique_id=877315594]
+transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.5079837, 0.6103276, -3.2856402)
+mesh = SubResource("ArrayMesh_id6en")
+skeleton = NodePath("")
+surface_material_override/0 = ExtResource("27_0uhm0")
 
 [node name="CarPolice" parent="House" unique_id=544559362 instance=ExtResource("6_2yo3a")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.023838, 0.45990196, 0.882339)
@@ -194,7 +228,7 @@ transform = Transform3D(0.0041363877, 0, 0.9999914, 0, 1, 0, -0.9999914, 0, 0.00
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.415159, -0.017997622, -9.714572)
 
 [node name="Wooden Chair4" parent="House/Physics Furnitures" unique_id=62752660 instance=ExtResource("23_1f3eg")]
-transform = Transform3D(-0.98104995, 0, 0.19375493, 0, 1, 0, -0.19375493, 0, -0.98104995, 0.41991568, -0.017997384, -6.1551433)
+transform = Transform3D(-0.98104995, 0, 0.19375493, 0, 1, 0, -0.19375493, 0, -0.98104995, 0.44458288, -0.017997384, -6.280042)
 
 [node name="Pillow A" parent="House/Physics Furnitures" unique_id=1691869916 instance=ExtResource("7_esp5a")]
 transform = Transform3D(0.98237544, 0.052355304, -0.17943637, 0, 0.95997167, 0.2800971, 0.18691841, -0.27516052, 0.9430526, -3.9036932, 0.6220577, 2.7235637)
@@ -246,7 +280,13 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.93
 
 [node name="Fridge Door Top" parent="House/Physics Furnitures/Fridge" unique_id=252533880 instance=ExtResource("15_2yo3a")]
 
-[node name="Paper Towel" parent="House" unique_id=1594201553 instance=ExtResource("24_1f3eg")]
+[node name="Lamp" parent="House/Physics Furnitures" unique_id=641633705 instance=ExtResource("26_0uhm0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.28873873, 1.3547121, 0.7850164)
+
+[node name="Lamp Standing" parent="House/Physics Furnitures" unique_id=1482766060 instance=ExtResource("25_dcb4m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.806287, 0.006789565, -6.9570103)
+
+[node name="Paper Towel" parent="House/Physics Furnitures" unique_id=1594201553 instance=ExtResource("24_1f3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.824929, -0.01799786, -4.062153)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=464707463]
@@ -266,21 +306,3 @@ environment = SubResource("Environment_qb4jd")
 transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 4, 0)
 shadow_enabled = true
 shadow_blur = 0.5
-
-[node name="Lamp Standing" parent="." unique_id=1482766060 instance=ExtResource("25_dcb4m")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.9290655, 0.049787283, -5.7686186)
-
-[node name="Lamp" parent="." unique_id=641633705 instance=ExtResource("26_0uhm0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.16596031, 1.3977098, 1.9734081)
-
-[node name="stairs" type="Node3D" parent="." unique_id=248918548]
-transform = Transform3D(-3.4531997e-08, 0, 0.7094997, 0, 0.79, 0, -0.79, 0, -3.101322e-08, 1.9449453, 0.6103276, -3.2856402)
-
-[node name="Cube" type="MeshInstance3D" parent="stairs" unique_id=1154229587]
-mesh = SubResource("ArrayMesh_6pks0")
-skeleton = NodePath("")
-
-[node name="Cube_001" type="MeshInstance3D" parent="stairs" unique_id=877315594]
-mesh = SubResource("ArrayMesh_id6en")
-skeleton = NodePath("")
-surface_material_override/0 = ExtResource("27_0uhm0")

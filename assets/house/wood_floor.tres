@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dckdgdjra3pro"]
+
+[ext_resource type="Texture2D" uid="uid://b0om7of6ycpou" path="res://assets/house/plank_flooring_04_diff_2k.jpg" id="1_0y5ov"]
+
+[resource]
+albedo_texture = ExtResource("1_0y5ov")
+uv1_triplanar = true

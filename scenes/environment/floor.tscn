@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://cwp1xrfxwclab"]
+
+[ext_resource type="Material" uid="uid://dckdgdjra3pro" path="res://assets/house/wood_floor.tres" id="1_jf6pd"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_gegj6"]
+lightmap_size_hint = Vector2i(66, 51)
+material = ExtResource("1_jf6pd")
+size = Vector3(2.875, 0.2, 2.875)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_1rvl0"]
+size = Vector3(2.875, 0.25, 2.875)
+
+[node name="Floor" type="StaticBody3D" unique_id=281782056]
+collision_layer = 2
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1855289639]
+mesh = SubResource("BoxMesh_gegj6")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1675597691]
+shape = SubResource("BoxShape3D_1rvl0")
