@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bft5koft63xsw"]
+
+[ext_resource type="PackedScene" uid="uid://dugaivbj1o66n" path="res://scenes/level/level.tscn" id="1_5jqar"]
+[ext_resource type="PackedScene" uid="uid://cwkyc0nx53a6l" path="res://scenes/theo_test_level/first_person_player.tscn" id="2_vs0c3"]
+[ext_resource type="PackedScene" uid="uid://bb5lum52267yb" path="res://scenes/theo_test_level/item.tscn" id="2_xd8t6"]
+
+[node name="Level" unique_id=613154552 instance=ExtResource("1_5jqar")]
+player_scene = ExtResource("2_vs0c3")
+
+[node name="Items" type="Node3D" parent="Environment" parent_id_path=PackedInt32Array(1952680421) index="1" unique_id=2018215964]
+
+[node name="Item" parent="Environment/Items" index="0" unique_id=1595605640 instance=ExtResource("2_xd8t6")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8714688, -8.127878)

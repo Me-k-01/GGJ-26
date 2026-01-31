@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://biaspx2jgs237"]
+
+[ext_resource type="PackedScene" uid="uid://dugaivbj1o66n" path="res://scenes/level/level.tscn" id="1_p5v48"]
+[ext_resource type="Script" uid="uid://di5oyfkrylyw2" path="res://scenes/fp_level/fp_level.gd" id="2_pjep5"]
+[ext_resource type="PackedScene" uid="uid://cwkyc0nx53a6l" path="res://scenes/fp_level/fp_player.tscn" id="3_p5v48"]
+[ext_resource type="PackedScene" uid="uid://bb5lum52267yb" path="res://scenes/fp_level/fp_item.tscn" id="4_uyoeo"]
+
+[node name="FPLevel" unique_id=613154552 instance=ExtResource("1_p5v48")]
+script = ExtResource("2_pjep5")
+first_person_player_scene = ExtResource("3_p5v48")
+
+[node name="Items" type="Node3D" parent="Environment" parent_id_path=PackedInt32Array(862527610) index="1" unique_id=2018215964]
+
+[node name="Item3" parent="Environment/Items" index="0" unique_id=1595605640 instance=ExtResource("4_uyoeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8714688, -8.127878)
+
+[node name="Item2" parent="Environment/Items" index="1" unique_id=239620749 instance=ExtResource("4_uyoeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7429376, -16.255756)
+mass = 1.0
+
+[node name="Item" parent="Environment/Items" index="2" unique_id=1513276634 instance=ExtResource("4_uyoeo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6144063, -24.383635)
