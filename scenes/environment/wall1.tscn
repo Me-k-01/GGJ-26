@@ -13,7 +13,7 @@ data = PackedVector3Array(0.1006, 0.292, -1.4491, 0.1006, 1.344, -1.4491, 0.1006
 [node name="Wall1" type="Node3D" unique_id=245533331]
 
 [node name="Wall1" type="MeshInstance3D" parent="." unique_id=574169245]
-transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 0, 0, 0)
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 0)
 layers = 2
 mesh = ExtResource("1_181wy")
 surface_material_override/0 = SubResource("ShaderMaterial_w4ihr")

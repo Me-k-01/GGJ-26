@@ -19,7 +19,7 @@ data = PackedVector3Array(0.044999998, 6.5074, -5.5889, 0.044999998, 4.1851, -5.
 [node name="Wall Door" type="Node3D" unique_id=245533331]
 
 [node name="Door" type="MeshInstance3D" parent="." unique_id=574169245]
-transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, 0, 0, 4.8589573)
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, 0, 0, 4.8589573)
 layers = 2
 mesh = ExtResource("1_v5ynr")
 surface_material_override/0 = ExtResource("2_uyr8y")
@@ -34,7 +34,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.679359)
 shape = SubResource("ConcavePolygonShape3D_uyr8y")
 
 [node name="Wall3" type="MeshInstance3D" parent="." unique_id=1467202229]
-transform = Transform3D(0.72, 0, 0, 0, 0.72, 0, 0, 0, 0.72, -0.003774643, 0, 4.853927)
+transform = Transform3D(0.65, 0, 0, 0, 0.65, 0, 0, 0, 0.65, -0.003774643, 0.009586215, 4.853927)
 mesh = ExtResource("3_6ncnl")
 surface_material_override/0 = SubResource("ShaderMaterial_v5ynr")
 

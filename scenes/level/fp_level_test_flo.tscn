@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bb5lum52267yb" path="res://scenes/fp_level/fp_item.tscn" id="4_pgexn"]
 [ext_resource type="Script" uid="uid://b1l5nshqpqc0d" path="res://scenes/fp_level/fp_players_container.gd" id="5_j0dcn"]
 [ext_resource type="PackedScene" uid="uid://bcdmda45cbxaa" path="res://scenes/environment/house.tscn" id="6_hlei0"]
-[ext_resource type="PackedScene" uid="uid://nfalprjnvir6" path="res://scenes/furnitures/couch.tscn" id="7_axmcd"]
+[ext_resource type="PackedScene" uid="uid://bww2c1y2aqgap" path="res://scenes/furnitures/couch.tscn" id="7_axmcd"]
 [ext_resource type="PackedScene" uid="uid://doptxjnj1r5o2" path="res://scenes/Yann_scene/Test_player_yco.tscn" id="8_axmcd"]
 
 [node name="FPLevel" unique_id=613154552 instance=ExtResource("1_a1ha7")]
