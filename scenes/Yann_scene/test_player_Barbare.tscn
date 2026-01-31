@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c3fyb3uo3t0rq"]
+
+[ext_resource type="PackedScene" uid="uid://cigdjct2d5a6g" path="res://assets/characters/player/test_player_yco/kaykit_character_pack_adventures/Characters/gltf/barbarian.tscn" id="1_fonty"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_i2mku"]
+
+[node name="TestPlayerYco" type="CharacterBody3D" unique_id=966598809]
+
+[node name="Barbarian2" parent="." unique_id=412321398 instance=ExtResource("1_fonty")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0017880201, 0, 0.012916803)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1159093904]
+transform = Transform3D(1, 0, 0, 0, 1.1569793, 0, 0, 0, 1, 0, 1.1470776, 0)
+shape = SubResource("CapsuleShape3D_i2mku")
+
+[node name="Node3D" type="Node3D" parent="CollisionShape3D" unique_id=32594498]
