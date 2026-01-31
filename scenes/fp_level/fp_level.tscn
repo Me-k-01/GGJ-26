@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://di5oyfkrylyw2" path="res://scenes/fp_level/fp_level.gd" id="2_pjep5"]
 [ext_resource type="PackedScene" uid="uid://cwkyc0nx53a6l" path="res://scenes/fp_level/fp_player.tscn" id="3_p5v48"]
 [ext_resource type="PackedScene" uid="uid://bb5lum52267yb" path="res://scenes/fp_level/fp_item.tscn" id="4_uyoeo"]
-[ext_resource type="Script" uid="uid://be7gmik21m8py" path="res://scenes/fp_level/fp_players_container.gd" id="5_pjep5"]
+[ext_resource type="Script" uid="uid://b1l5nshqpqc0d" path="res://scenes/fp_level/fp_players_container.gd" id="5_pjep5"]
 
 [node name="FPLevel" unique_id=613154552 instance=ExtResource("1_p5v48")]
 script = ExtResource("2_pjep5")

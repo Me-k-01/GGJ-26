@@ -14,23 +14,23 @@ func apply_rotation(_velocity: Vector3) -> void:
 func animate(_velocity: Vector3) -> void:
 	if not _character.is_on_floor():
 		if _velocity.y < 0:
-			animation_player.play("Fall")
+			animation_player.play("Jump_Idle")
 		else:
 			var current_anim = animation_player.current_animation
-			if current_anim != "Jump" and current_anim != "Jump2":
-				animation_player.play("Jump")
+			if current_anim != "Jump_Start" and current_anim != "Jump_Idle":
+				animation_player.play("Jump_Start")
 		return
 
 	if _velocity:
 		if _character.is_running() and _character.is_on_floor():
-			animation_player.play("Sprint")
+			animation_player.play("Running_A")
 			return
 
-		animation_player.play("Run")
+		animation_player.play("Running_B")
 		return
 
 	animation_player.play("Idle")
 
-func play_jump_animation(jump_type: String = "Jump") -> void:
+func play_jump_animation(jump_type: String = "Jump_Start") -> void:
 	if animation_player:
 		animation_player.play(jump_type)

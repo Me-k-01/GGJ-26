@@ -28,10 +28,10 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @export var yellow_texture : CompressedTexture2D
 @export var green_texture : CompressedTexture2D
 @export var red_texture : CompressedTexture2D
-@onready var _bottom_mesh: MeshInstance3D = get_node("3DGodotRobot/RobotArmature/Skeleton3D/Bottom")
-@onready var _chest_mesh: MeshInstance3D = get_node("3DGodotRobot/RobotArmature/Skeleton3D/Chest")
-@onready var _face_mesh: MeshInstance3D = get_node("3DGodotRobot/RobotArmature/Skeleton3D/Face")
-@onready var _limbs_head_mesh: MeshInstance3D = get_node("3DGodotRobot/RobotArmature/Skeleton3D/Llimbs and head")
+@onready var _bottom_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
+@onready var _chest_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
+@onready var _face_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
+@onready var _limbs_head_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
 
 @export_group("Holding Objects")
 @export var throw_force = 7.5
@@ -126,7 +126,7 @@ func _physics_process(delta):
 		if Input.is_action_just_pressed("jump"):
 			velocity.y = JUMP_VELOCITY
 			can_double_jump = true
-			_body.play_jump_animation("Jump")
+			_body.play_jump_animation("Jump_Start")
 	else:
 		velocity.y -= gravity * delta
 
@@ -134,7 +134,7 @@ func _physics_process(delta):
 			velocity.y = JUMP_VELOCITY
 			has_double_jumped = true
 			can_double_jump = false
-			_body.play_jump_animation("Jump2")
+			_body.play_jump_animation("Jump_Idle")
 
 	velocity.y -= gravity * delta
 
