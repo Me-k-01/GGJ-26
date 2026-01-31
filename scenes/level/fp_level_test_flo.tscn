@@ -7,7 +7,7 @@
 [ext_resource type="Script" uid="uid://b1l5nshqpqc0d" path="res://scenes/fp_level/fp_players_container.gd" id="5_j0dcn"]
 [ext_resource type="PackedScene" uid="uid://bcdmda45cbxaa" path="res://scenes/environment/house.tscn" id="6_hlei0"]
 [ext_resource type="PackedScene" uid="uid://bww2c1y2aqgap" path="res://scenes/furnitures/couch.tscn" id="7_axmcd"]
-[ext_resource type="PackedScene" uid="uid://doptxjnj1r5o2" path="res://scenes/Yann_scene/Test_player_yco.tscn" id="8_axmcd"]
+[ext_resource type="PackedScene" uid="uid://dspodocisgprb" path="res://scenes/furnitures/bush.tscn" id="9_3prau"]
 [ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/environment/car_police.tscn" id="9_vwhm0"]
 
 [node name="FPLevel" unique_id=613154552 instance=ExtResource("1_a1ha7")]
@@ -30,13 +30,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6144063, -24.383635)
 script = ExtResource("5_j0dcn")
 
 [node name="Node3D" parent="." index="5" unique_id=339892515 instance=ExtResource("6_hlei0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3496127, 0.024999619, 1.3291464)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.490265, 0, 0)
 
 [node name="RigidBody" parent="." index="6" unique_id=1979657341 instance=ExtResource("7_axmcd")]
-transform = Transform3D(-0.9854584, 0, 0.16991708, 0, 1, 0, -0.16991708, 0, -0.9854584, -1.8763919, 0.024999857, 3.8812985)
+transform = Transform3D(-0.9854584, 0, 0.16991708, 0, 1, 0, -0.16991708, 0, -0.9854584, -4.503657, 0.024999857, 2.3159423)
 
-[node name="TestPlayerYco" parent="." index="7" unique_id=966598809 instance=ExtResource("8_axmcd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8763919, 0.024999857, -1.7813983)
+[node name="CarPolice" parent="." index="7" unique_id=544559362 instance=ExtResource("9_vwhm0")]
+transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.023838, 0.45990196, 0.882339)
 
-[node name="CarPolice" parent="." index="8" unique_id=544559362 instance=ExtResource("9_vwhm0")]
-transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -8.533573, 0.45990196, 0.882339)
+[node name="bush" parent="." index="8" unique_id=1996717523 instance=ExtResource("9_3prau")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.28189278, 0.025000095, 2.494508)
