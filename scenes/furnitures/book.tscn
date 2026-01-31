@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://c8mwgbey8uv6p"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_g4nyd"]
+[ext_resource type="ArrayMesh" uid="uid://12gpxenpf7vl" path="res://assets/kaykit_furniture_bits/obj/book_single.obj" id="2_o4kdx"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_o4kdx"]
+points = PackedVector3Array(-0.1286356, -0.2286811, -0.1588644, 0.11436294, 0.24199623, 0.18275566, 0.12967111, 0.22711438, 0.16782086, 0.11436294, -0.24199623, 0.18275566, 0.1297097, -0.22718248, -0.15779029, -0.11338375, 0.22867389, -0.17411624, -0.12858531, 0.22859237, 0.16888018, -0.11319312, -0.24355032, 0.18389696, 0.1297097, 0.22718248, -0.15779029, 0.11454243, -0.22719495, -0.17295757, -0.11319312, 0.24355032, 0.18389696, 0.1153357, 0.24407208, -0.15893653, 0.1153357, -0.24407208, -0.15893653, -0.1286356, 0.2286811, -0.1588644, -0.12858531, -0.22859237, 0.16888018, 0.12967111, -0.22711438, 0.16782086, -0.11338375, -0.22867389, -0.17411624, 0.11454243, 0.22719495, -0.17295757, -0.11386527, -0.24498436, -0.15954943, -0.11386527, 0.24498436, -0.15954943)
+
+[node name="Book" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 4.22
+script = ExtResource("1_g4nyd")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="BookSingle" type="MeshInstance3D" parent="." unique_id=717042124]
+mesh = ExtResource("2_o4kdx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1498884043]
+shape = SubResource("ConvexPolygonShape3D_o4kdx")

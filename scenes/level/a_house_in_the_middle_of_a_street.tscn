@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cil4f4ssbfp7l" path="res://scenes/environment/stove.tscn" id="4_b08bv"]
 [ext_resource type="Material" uid="uid://cq7miwwwdehxy" path="res://assets/house/wood2.tres" id="5_k2vv7"]
 [ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/environment/car_police.tscn" id="6_2yo3a"]
+[ext_resource type="PackedScene" uid="uid://d4mavdeqcfyjy" path="res://scenes/furnitures/remote.tscn" id="6_esp5a"]
 [ext_resource type="PackedScene" uid="uid://c7aw3xn43pfaa" path="res://scenes/furnitures/pillow_a.tscn" id="7_esp5a"]
 [ext_resource type="PackedScene" uid="uid://b5jjxxswkdeq" path="res://scenes/furnitures/table_medium.tscn" id="8_q7bk5"]
 [ext_resource type="PackedScene" uid="uid://bww2c1y2aqgap" path="res://scenes/furnitures/couch.tscn" id="9_wyu6l"]
@@ -17,6 +18,12 @@
 [ext_resource type="PackedScene" uid="uid://d3df30yu2quld" path="res://scenes/furnitures/fridge_door_top.tscn" id="15_2yo3a"]
 [ext_resource type="PackedScene" uid="uid://d2cx2qo03q7yu" path="res://scenes/furnitures/oven.tscn" id="16_2yo3a"]
 [ext_resource type="PackedScene" uid="uid://cpabq5wjfdagv" path="res://scenes/furnitures/oven_door.tscn" id="17_esp5a"]
+[ext_resource type="PackedScene" uid="uid://b88rg0jgdskh1" path="res://scenes/furnitures/cactus.tscn" id="19_q7bk5"]
+[ext_resource type="PackedScene" uid="uid://bxk8thnxsnac" path="res://scenes/furnitures/radio.tscn" id="20_r3die"]
+[ext_resource type="PackedScene" uid="uid://dko6ob4md1md8" path="res://scenes/furnitures/pillow_b.tscn" id="21_dikc6"]
+[ext_resource type="PackedScene" uid="uid://cprqhhlghuox" path="res://scenes/furnitures/stool.tscn" id="22_8cog2"]
+[ext_resource type="PackedScene" uid="uid://d4a02327wy4jk" path="res://scenes/furnitures/chair_wood.tscn" id="23_1f3eg"]
+[ext_resource type="PackedScene" uid="uid://dwwdrk2kc6d8k" path="res://scenes/furnitures/paper_towel.tscn" id="24_1f3eg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vwhm0"]
 
@@ -55,21 +62,8 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10.3
 [node name="kitchen bar" type="Node3D" parent="House/Static furnitures" unique_id=1277670819]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.490265, 0, 0)
 
-[node name="Bar" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=1127473099]
-transform = Transform3D(1, 0, 0, 0, 1.3202213, 0, 0, 0, 4.1430035, 0.15276009, 0.6560254, 1.4965959)
-material_override = ExtResource("5_k2vv7")
-mesh = SubResource("BoxMesh_vwhm0")
-skeleton = NodePath("../../../../..")
-
-[node name="StaticBody3D" type="StaticBody3D" parent="House/Static furnitures/kitchen bar/Bar" unique_id=352624118]
-collision_layer = 2
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="House/Static furnitures/kitchen bar/Bar/StaticBody3D" unique_id=733600755]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.05287671, 0)
-shape = SubResource("ConvexPolygonShape3D_3prau")
-
 [node name="Wood Girder" type="MeshInstance3D" parent="House/Static furnitures/kitchen bar" unique_id=50819558]
-transform = Transform3D(0.3, 0, 0, 0, -3.359, 2.6226834e-08, 0, -2.936531e-07, -0.3, 0.15276009, 2.6905913, -0.015465975)
+transform = Transform3D(0.3, 0, 0, 0, -4.7969313, 2.6226834e-08, 0, -4.1936104e-07, -0.3, 0.15276009, 2.0658407, -0.015465975)
 material_override = ExtResource("5_k2vv7")
 mesh = SubResource("BoxMesh_vwhm0")
 skeleton = NodePath("../../../../..")
@@ -112,13 +106,28 @@ transform = Transform3D(1.0744318, 0, 0, 0, 0.12708062, 0, 0, 0, 4.2329926, 0.15
 mesh = SubResource("BoxMesh_vwhm0")
 skeleton = NodePath("../../../../..")
 
+[node name="Remote" parent="House/Static furnitures/kitchen bar" unique_id=1595605640 instance=ExtResource("6_esp5a")]
+transform = Transform3D(0.2933062, 0, -0.95601857, 0, 1, 0, 0.95601857, 0, 0.2933062, -5.1511297, 0.5768084, 1.9783814)
+
 [node name="CarPolice" parent="House" unique_id=544559362 instance=ExtResource("6_2yo3a")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.023838, 0.45990196, 0.882339)
 skeleton = NodePath("../../..")
 
 [node name="Physics Furnitures" type="Node3D" parent="House" unique_id=1259720031]
 
-[node name="Pillow A" parent="House/Physics Furnitures" unique_id=1595605640 instance=ExtResource("7_esp5a")]
+[node name="Wooden Chair" parent="House/Physics Furnitures" unique_id=280483293 instance=ExtResource("23_1f3eg")]
+transform = Transform3D(-0.047298227, 0, -0.9988808, 0, 1, 0, 0.9988808, 0, -0.047298227, 2.0744648, -0.017997622, -7.7390413)
+
+[node name="Wooden Chair2" parent="House/Physics Furnitures" unique_id=288074201 instance=ExtResource("23_1f3eg")]
+transform = Transform3D(0.0041363877, 0, 0.9999914, 0, 1, 0, -0.9999914, 0, 0.0041363877, -1.5942777, -0.017997384, -7.825476)
+
+[node name="Wooden Chair3" parent="House/Physics Furnitures" unique_id=778475403 instance=ExtResource("23_1f3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.415159, -0.017997622, -9.714572)
+
+[node name="Wooden Chair4" parent="House/Physics Furnitures" unique_id=62752660 instance=ExtResource("23_1f3eg")]
+transform = Transform3D(-0.98104995, 0, 0.19375493, 0, 1, 0, -0.19375493, 0, -0.98104995, 0.41991568, -0.017997384, -6.1551433)
+
+[node name="Pillow A" parent="House/Physics Furnitures" unique_id=1691869916 instance=ExtResource("7_esp5a")]
 transform = Transform3D(0.98237544, 0.052355304, -0.17943637, 0, 0.95997167, 0.2800971, 0.18691841, -0.27516052, 0.9430526, -3.9036932, 0.6220577, 2.7235637)
 
 [node name="Pillow A2" parent="House/Physics Furnitures" unique_id=793483775 instance=ExtResource("7_esp5a")]
@@ -139,6 +148,18 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.620055, 0.025000095, -6.72
 [node name="Table Low" parent="House/Physics Furnitures" unique_id=614953863 instance=ExtResource("12_8cog2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9394975, 0.025000095, -0.20818305)
 
+[node name="Cactus" parent="House/Physics Furnitures" unique_id=1133553467 instance=ExtResource("19_q7bk5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9432054, 2.4931812, 4.121051)
+
+[node name="Radio" parent="House/Physics Furnitures" unique_id=773356800 instance=ExtResource("20_r3die")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.6987543, 2.9963655, -7.5060463)
+
+[node name="Pillow B" parent="House/Physics Furnitures" unique_id=1335785452 instance=ExtResource("21_dikc6")]
+transform = Transform3D(0.9941321, 0.08829375, -0.062494643, 0, 0.5777294, 0.81622833, 0.10817286, -0.8114388, 0.57433933, -4.62684, 0.6720471, 2.684928)
+
+[node name="Stool" parent="House/Physics Furnitures" unique_id=1360274038 instance=ExtResource("22_8cog2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.361385, -0.017997384, 1.4064174)
+
 [node name="Oven" type="Node3D" parent="House/Physics Furnitures" unique_id=1119496954]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 1.8025091, -0.042997718, 4.01737)
 
@@ -155,6 +176,9 @@ transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 5.93
 [node name="Fridge Door Bottom" parent="House/Physics Furnitures/Fridge" unique_id=1903810998 instance=ExtResource("14_k2vv7")]
 
 [node name="Fridge Door Top" parent="House/Physics Furnitures/Fridge" unique_id=252533880 instance=ExtResource("15_2yo3a")]
+
+[node name="Paper Towel" parent="House" unique_id=1594201553 instance=ExtResource("24_1f3eg")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.824929, -0.01799786, -4.062153)
 
 [node name="Floor" type="StaticBody3D" parent="." unique_id=464707463]
 collision_layer = 2

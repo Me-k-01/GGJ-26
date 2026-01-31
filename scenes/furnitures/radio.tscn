@@ -1,0 +1,41 @@
+[gd_scene format=3 uid="uid://bxk8thnxsnac"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_5xuv5"]
+[ext_resource type="PackedScene" uid="uid://boxbxuw6ah07k" path="res://assets/other_furnitures/Radio.glb" id="2_2a8et"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_2a8et"]
+size = Vector3(0.6657715, 0.45672607, 0.17558289)
+
+[node name="Radio" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 10.0
+script = ExtResource("1_5xuv5")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="Root Scene" parent="." unique_id=1115897291 instance=ExtResource("2_2a8et")]
+transform = Transform3D(0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1482750265]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.002319336, 0.23043823, 0.058815002)
+shape = SubResource("BoxShape3D_2a8et")

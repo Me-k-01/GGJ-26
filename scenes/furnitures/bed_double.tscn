@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://dcs3xt6kgn06n"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_pyis0"]
+[ext_resource type="ArrayMesh" uid="uid://b8yemgniqejpb" path="res://assets/kaykit_furniture_bits/obj/bed_double_B.obj" id="2_i7db8"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_yywbl"]
+points = PackedVector3Array(-1.4008893, 0.099999994, 1.1486051, 1.525397, 0.8119047, 1.5261904, 1.525397, 0.8119047, 1.1817845, 1.525397, -0.024603188, 1.5261904, -1.525397, 0.8119047, 1.5261904, -1.525397, -0.024603188, 1.5261904, 1.525397, -0.024603188, 1.1817845, -1.525397, 0.8119047, 1.1817845, 1.525397, 0.51663774, 1.1325396, -1.525397, -0.024603188, 1.1817845, -1.525397, 0.51663774, 1.1325396, 1.4008893, 0.099999994, 1.1486051)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_6j6ae"]
+points = PackedVector3Array(1.4105598, 0.5, 1.0991998, -1.525397, 0.07389617, 0.24682534, -1.4105598, 0.5, 0.28016517, 1.525397, 0.07389617, 0.24682534, -1.525397, 0.07389617, 1.1325396, 1.525397, 0.07389617, 1.1325396, 1.4105598, 0.5, 0.28016517, -1.4105598, 0.5, 1.0991998)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_vdqxf"]
+points = PackedVector3Array(-1.4497786, 0.00089390733, -1.480894, -1.5250441, -0.024603128, -1.179889, -1.5250441, 1.0087302, -1.179889, -1.5250441, 0.5165415, 0.24682534, 1.4500194, 0.00089390733, -1.480894, 1.4297979, 0.099999994, 0.19137284, 1.467282, 0.9890811, -1.4909189, -1.4295571, 0.099999994, 0.19137284, 1.5252849, 0.5165415, 0.24682534, -1.4670413, 0.9890811, -1.4909189, 1.5252849, 1.0087302, -1.179889, 1.5252849, -0.024603128, -1.179889, -1.5743623, 0.56569964, 0.099090695, 1.5746031, 0.56569964, 0.099090695, -1.5099105, 0.09093552, 0.068881325, 1.5100528, 0.09096169, 0.068835154, 1.5746031, 0.56569964, -0.29452154, -1.5743623, 0.56569964, -0.29452154)
+
+[node name="Double Bed" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 80.0
+script = ExtResource("1_pyis0")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="BedDoubleB" type="MeshInstance3D" parent="." unique_id=2048941304]
+transform = Transform3D(0.7091019, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+mesh = ExtResource("2_i7db8")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="." unique_id=1703921664]
+transform = Transform3D(0.7091019, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_yywbl")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=911118146]
+transform = Transform3D(0.7091019, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_6j6ae")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=927404200]
+transform = Transform3D(0.7091019, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
+shape = SubResource("ConvexPolygonShape3D_vdqxf")

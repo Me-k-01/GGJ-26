@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://xulmxnrshdm4"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_rajud"]
+[ext_resource type="ArrayMesh" uid="uid://gqviliij0n4n" path="res://assets/kaykit_furniture_bits/obj/bed_single_A.obj" id="2_gehbe"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_gehbe"]
+points = PackedVector3Array(-0.77600896, 0.5951589, -0.28563976, 0.84284794, 0.54753983, 0.095461816, -0.7285347, 0.54753983, 1.4760414, -0.701803, 0.10074363, -1.0169022, 0.6594541, -5.551115e-17, 1.4006642, 0.48244926, 0.71877676, -0.9808657, -0.7285347, -0.023730308, 1.0949398, 0.67947716, 0.099999994, -1.0201061, 0.6999357, 0.54753983, 1.4760414, -0.49034753, 0.78571427, -0.4759295, -0.7285347, 0.54753983, -1.1428573, 0.4617485, 0.78571427, -0.42842233, 0.6999357, 0.54753983, -1.1428573, -0.7389186, 0.13149138, 1.4608535, 0.6999357, -0.023730308, 1.0949398, -0.8238095, 0.54753983, 0.095461816, 0.7442694, 0.13610516, -1.0564092, -0.3602325, 0.75086284, -0.89731556, 0.7442694, 0.13610516, 1.3926904, 0.7827324, 0.0938337, -0.251051, -0.68186283, 0.0018628541, 1.394747, 0.50938594, 0.78571427, -0.4759295, -0.75037557, 0.09877993, -0.28700462, -0.46554717, 0.72030264, -0.986157, 0.7952105, 0.5952381, -0.28537872, 0.7952105, 0.5952381, 0.095461816, 0.6935367, 0.09410319, 1.4264632, -0.77600896, 0.5951589, 0.095461816, -0.44271013, 0.78571427, -0.42842233, 0.3792709, 0.75086284, -0.89731556, 0.72570264, 0.48939946, 1.3623111, 0.72570264, 0.48939946, -1.0249012)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_4mx8d"]
+points = PackedVector3Array(-0.669043, 0.018393805, -1.202012, 0.6445271, 0.981925, -1.201925, 0.69971573, 1.0238096, -1.5237722, -0.7285061, 1.0238096, -1.5237722, 0.69971573, -0.023809552, -1.5237722, 0.74566334, 0.14326729, -1.1549103, -0.7285061, -0.023809552, -1.5237722, -0.66949224, 0.981925, -1.201925, -0.7761904, 0.5, -1.1428945, 0.79523814, 0.5, -1.1428945, 0.64311266, 0.01914842, -1.2022177, -0.71067494, 0.10718991, -1.1587739, 0.79523814, 0.11924338, -1.1905042, -0.7761904, 0.07145652, -1.1905042, -0.7285061, 0.5474792, -1.1428945, 0.69971573, 0.5474792, -1.1428945, 0.693545, 0.10281721, -1.1568308, 0.79523814, 0.5, -1.1905042)
+
+[node name="Single Bed" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 70.0
+script = ExtResource("1_rajud")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="BedSingleA" type="MeshInstance3D" parent="." unique_id=567038382]
+mesh = ExtResource("2_gehbe")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="." unique_id=562542535]
+shape = SubResource("ConvexPolygonShape3D_gehbe")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1825748561]
+shape = SubResource("ConvexPolygonShape3D_4mx8d")

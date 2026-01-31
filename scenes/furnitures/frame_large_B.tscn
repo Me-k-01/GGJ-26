@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://dkcykqnqrm0wm"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_uxm2r"]
+[ext_resource type="ArrayMesh" uid="uid://cte052ykjbshk" path="res://assets/kaykit_furniture_bits/obj/pictureframe_large_B.obj" id="2_q67rl"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_t18n1"]
+points = PackedVector3Array(-1.0158731, -0.615873, -0.01585126, 0.9483235, 0.5810593, 0.19894068, 1.0158731, 0.6222223, -0.01585126, 1.0158731, -0.615873, -0.01585126, -1.0158731, 0.6222223, -0.01585126, -0.9571576, -0.58009326, 0.19990672, 0.9571576, -0.58009326, 0.19990672, -0.9483235, 0.5810593, 0.19894068)
+
+[node name="Frame Picture B" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 7.0
+script = ExtResource("1_uxm2r")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="PictureframeLargeB" type="MeshInstance3D" parent="." unique_id=1646937072]
+mesh = ExtResource("2_q67rl")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1642066060]
+shape = SubResource("ConvexPolygonShape3D_t18n1")

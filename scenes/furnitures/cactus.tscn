@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://b88rg0jgdskh1"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_iokyx"]
+[ext_resource type="ArrayMesh" uid="uid://bhlqeam5f4ssp" path="res://assets/kaykit_furniture_bits/obj/cactus_medium_B.obj" id="2_ku8td"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_ku8td"]
+points = PackedVector3Array(0.33202916, 0.35896084, 0.27284873, -0.14624564, 0.3455968, -0.4047318, -0.36316147, 0.39807183, 0.2589587, 0.13457535, 0.8159575, -0.14065884, 0.24215434, 0.00838807, -0.18099532, -0.24189419, 0.008988346, 0.18192524, 0.3464549, 0.345405, -0.259233, -0.36316147, 0.39807183, -0.25775874, -0.15369427, 0.39807183, 0.4125729, 0.10654546, 0.025442801, 0.300619, -0.25368583, 0.024835806, -0.19290894, -0.29104856, 0.6368879, -0.032341707, 0.18402082, 0.60922676, 0.2570099, 0.42786822, 0.3451823, 0.020641629, 0.093543865, 0.732988, -0.28690583, 0.13452432, 0.33138734, -0.40991598, -0.42998546, 0.33153152, -0.005978356, 0.25472367, 0.009706687, 0.15477212, -0.094198994, 0.008465994, -0.28861102, 0.013024778, 0.7795162, -0.005826914, 0.14661771, 0.35874173, 0.40747228, 0.23927127, 0.7443862, -0.16557465, -0.039812345, 0.78377676, -0.16526532, 0.36306146, 0.39807183, 0.2588753, -0.106700614, 0.02546741, 0.30053914, 0.106705256, 0.024863228, -0.29978907, 0.31855702, 0.040249746, -0.01930126, -0.30831018, 0.023360385, 0.034054834, 0.25338763, 0.6120802, 0.19395772, 0.4291571, 0.3718431, -0.032796595, -0.18160574, 0.39807183, -0.3973625, 0.13399236, 0.8142084, -0.073045634)
+
+[node name="Cactus" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 5.0
+script = ExtResource("1_iokyx")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="CactusMediumB" type="MeshInstance3D" parent="." unique_id=795265383]
+mesh = ExtResource("2_ku8td")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=1407788341]
+shape = SubResource("ConvexPolygonShape3D_ku8td")

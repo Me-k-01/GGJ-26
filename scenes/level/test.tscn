@@ -1,8 +1,8 @@
-[gd_scene format=3 uid="uid://bb7uhoiur6cdu"]
+[gd_scene format=3 uid="uid://df46qjm67lkkh"]
 
 [ext_resource type="PackedScene" uid="uid://cfvv6r7dv0egc" path="res://scenes/level/fp_level_test_flo.tscn" id="1_6nsnc"]
-[ext_resource type="PackedScene" uid="uid://bim81osigfv7t" path="res://scenes/furnitures/evidence.tscn" id="2_a84y6"]
-[ext_resource type="PackedScene" uid="uid://78dta1tn0o7k" path="res://scenes/environment/police.tscn" id="3_ls1i8"]
+[ext_resource type="PackedScene" path="res://scenes/furnitures/evidence.tscn" id="2_a84y6"]
+[ext_resource type="PackedScene" path="res://scenes/environment/police.tscn" id="3_ls1i8"]
 
 [node name="FPLevel" unique_id=613154552 instance=ExtResource("1_6nsnc")]
 

@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://bduqjqxl05mou"]
+
+[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_dwwpm"]
+[ext_resource type="ArrayMesh" uid="uid://bnbwxlvw55p36" path="res://assets/kaykit_furniture_bits/obj/pictureframe_large_A.obj" id="2_w1m80"]
+
+[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
+properties/0/path = NodePath(".:position")
+properties/0/spawn = true
+properties/0/replication_mode = 1
+properties/1/path = NodePath(".:rotation")
+properties/1/spawn = true
+properties/1/replication_mode = 1
+properties/2/path = NodePath(".:linear_velocity")
+properties/2/spawn = true
+properties/2/replication_mode = 1
+properties/3/path = NodePath(".:angular_velocity")
+properties/3/spawn = true
+properties/3/replication_mode = 1
+properties/4/path = NodePath(".:held_by_id")
+properties/4/spawn = true
+properties/4/replication_mode = 1
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_w1m80"]
+points = PackedVector3Array(-0.49266097, -0.5710718, 0.012660982, -0.44913113, -0.5412288, -1.3877788e-17, 0.4999179, -0.5904314, 0.2190476, -0.49039415, 0.5904314, 0.2190476, 0.45865488, 0.5412288, 1.3877788e-17, -0.49039415, -0.5904314, 0.2190476, 0.48587635, -0.592239, 0.012239045, -0.4763526, 0.592239, 0.012239045, 0.4999179, 0.5904314, 0.2190476, 0.50258654, 0.57153314, 0.01258658, 0.45865488, -0.5412288, 1.3877788e-17, -0.44913113, 0.5412288, -1.3877788e-17, -0.4763526, -0.592239, 0.012239045, 0.48587635, 0.592239, 0.012239045, 0.50258654, -0.57153314, 0.01258658, -0.49266097, 0.5710718, 0.012660982)
+
+[node name="Frame Picture A" type="RigidBody3D" unique_id=1595605640]
+collision_layer = 5
+collision_mask = 6
+mass = 4.0
+script = ExtResource("1_dwwpm")
+
+[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
+replication_config = SubResource("SceneReplicationConfig_hqwwb")
+visibility_update_mode = 1
+
+[node name="PictureframeLargeA" type="MeshInstance3D" parent="." unique_id=1745273893]
+mesh = ExtResource("2_w1m80")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=774847851]
+shape = SubResource("ConvexPolygonShape3D_w1m80")
