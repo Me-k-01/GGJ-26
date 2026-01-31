@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://bwu3115o21uep"]
+
+[ext_resource type="Material" uid="uid://yfgf220jmvif" path="res://assets/house/roof.tres" id="1_w4jck"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_fluca"]
+size = Vector3(15.465, 7.665, 0.16)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_isanh"]
+size = Vector3(14.7750435, 7.665, 0.16)
+
+[node name="Roof" type="StaticBody3D" unique_id=725858971]
+collision_layer = 2
+
+[node name="RoofMesh" type="MeshInstance3D" parent="." unique_id=741997179]
+transform = Transform3D(0.9558803, -0.026049588, 1.1373671e-09, 0, -4.3761226e-08, -1.0000001, 0.024880353, 1.0008012, -4.36966e-08, 7.37784, 8.745847, 0.21513872)
+mesh = SubResource("BoxMesh_fluca")
+skeleton = NodePath("../../..")
+surface_material_override/0 = ExtResource("1_w4jck")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=187259212]
+transform = Transform3D(0.99966145, -0.026019922, 1.1373669e-09, 0, -4.371139e-08, -1, 0.026019922, 0.99966145, -4.369659e-08, 7.3842955, 8.745847, 0.21530674)
+shape = SubResource("BoxShape3D_isanh")
