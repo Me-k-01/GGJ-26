@@ -27,6 +27,7 @@ surface_material_override/1 = ExtResource("3_54co0")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Door" unique_id=1641635804]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -6.679359)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door/StaticBody3D" unique_id=592407537]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 6.679359)
@@ -38,6 +39,7 @@ mesh = ExtResource("3_6ncnl")
 surface_material_override/0 = SubResource("ShaderMaterial_v5ynr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall3" unique_id=583069806]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3/StaticBody3D" unique_id=888826574]
 shape = SubResource("ConcavePolygonShape3D_54co0")

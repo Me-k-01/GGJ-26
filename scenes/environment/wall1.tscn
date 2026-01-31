@@ -19,6 +19,7 @@ mesh = ExtResource("1_181wy")
 surface_material_override/0 = SubResource("ShaderMaterial_w4ihr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall1" unique_id=393868746]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall1/StaticBody3D" unique_id=1813393981]
 shape = SubResource("ConcavePolygonShape3D_181wy")

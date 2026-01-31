@@ -9,11 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bb3fj5okwxchm" path="res://scenes/environment/car_police.tscn" id="7_ud7qy"]
 [ext_resource type="PackedScene" uid="uid://cor3sc0b83wvc" path="res://scenes/environment/wall_door.tscn" id="9_xj14o"]
 [ext_resource type="PackedScene" uid="uid://cmuii2vrmfnc5" path="res://assets/characters/player/3DGodotRobot.glb" id="10_jx75c"]
-[ext_resource type="PackedScene" uid="uid://bww2c1y2aqgap" path="res://scenes/furnitures/couch.tscn" id="10_rkdpc"]
-[ext_resource type="PackedScene" uid="uid://bypjhhvtkv8sh" path="res://scenes/environment/big_window.tscn" id="10_xj14o"]
-[ext_resource type="PackedScene" uid="uid://lj0jesphi7n2" path="res://scenes/environment/wall2.tscn" id="11_jx75c"]
-[ext_resource type="PackedScene" uid="uid://dspodocisgprb" path="res://scenes/furnitures/bush.tscn" id="14_3nspi"]
-[ext_resource type="PackedScene" uid="uid://d3v6k761a4rn" path="res://scenes/environment/wall1.tscn" id="14_rkdpc"]
+[ext_resource type="PackedScene" uid="uid://bcdmda45cbxaa" path="res://scenes/environment/house.tscn" id="10_xhif1"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_r5xs5"]
 size = Vector2(90, 90)
@@ -77,37 +73,4 @@ transform = Transform3D(9.615665, 0, 0, 0, 9.615665, 0, 0, 0, 9.615665, -7.71121
 [node name="Wall Door" parent="South Wall" unique_id=245533331 instance=ExtResource("9_xj14o")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.019288063, 0.1321421, -2.899376)
 
-[node name="Couch" parent="." unique_id=1664048952 instance=ExtResource("10_rkdpc")]
-transform = Transform3D(-0.99957883, 0, 0.029020676, 0, 1, 0, -0.029020676, 0, -0.99957883, 1.7148094, 0.025000095, 2.971565)
-
-[node name="Node3D" type="Node3D" parent="." unique_id=2110124442]
-
-[node name="Big Wall Window" parent="Node3D" unique_id=1772632751 instance=ExtResource("10_xj14o")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.013135791, 0.025000095, 1.1312985)
-
-[node name="Big Wall Window2" parent="Node3D" unique_id=1341632078 instance=ExtResource("10_xj14o")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 3.194665, 0.025000572, -8.031202)
-
-[node name="Wall1" parent="Node3D" unique_id=1351682663 instance=ExtResource("14_rkdpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.51161, 0.10399058, 1.7575586)
-
-[node name="Wall2" parent="Node3D" unique_id=1429196088 instance=ExtResource("11_jx75c")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 9.062877, 0.10399058, -0.55029106)
-
-[node name="Wall Door" parent="Node3D" unique_id=1518292126 instance=ExtResource("9_xj14o")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 11.842822, 0.102141865, -0.56270075)
-
-[node name="Wall3" parent="Node3D" unique_id=303051902 instance=ExtResource("14_rkdpc")]
-transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 2.3005524, 0.10399058, 4.1161795)
-
-[node name="Wall4" parent="Node3D" unique_id=897202838 instance=ExtResource("14_rkdpc")]
-transform = Transform3D(-4.3711385e-08, 0, 0.99999994, 0, 1, 0, -0.99999994, 0, -4.3711385e-08, 7.0496635, 0.10399058, 4.1295347)
-
-[node name="Wall5" parent="Node3D" unique_id=728852313 instance=ExtResource("14_rkdpc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.007200122, 0.10399058, -6.056284)
-
-[node name="3DGodotRobot2" parent="Node3D" unique_id=1294586086 instance=ExtResource("10_jx75c")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.1391735, 0.024999619, -1.3275843)
-
-[node name="bush" parent="Node3D" unique_id=1996717523 instance=ExtResource("14_3nspi")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.375588, 0.025000334, 2.6580691)
+[node name="House" parent="." unique_id=339892515 instance=ExtResource("10_xhif1")]

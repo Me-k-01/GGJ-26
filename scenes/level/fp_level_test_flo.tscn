@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://cfvv6r7dv0egc"]
+
+[ext_resource type="PackedScene" uid="uid://dugaivbj1o66n" path="res://scenes/level/level.tscn" id="1_a1ha7"]
+[ext_resource type="Script" uid="uid://di5oyfkrylyw2" path="res://scenes/fp_level/fp_level.gd" id="2_o4rqx"]
+[ext_resource type="PackedScene" uid="uid://cwkyc0nx53a6l" path="res://scenes/fp_level/fp_player.tscn" id="3_440xv"]
+[ext_resource type="PackedScene" uid="uid://bb5lum52267yb" path="res://scenes/fp_level/fp_item.tscn" id="4_pgexn"]
+[ext_resource type="Script" uid="uid://b1l5nshqpqc0d" path="res://scenes/fp_level/fp_players_container.gd" id="5_j0dcn"]
+[ext_resource type="PackedScene" uid="uid://bcdmda45cbxaa" path="res://scenes/environment/house.tscn" id="6_hlei0"]
+[ext_resource type="PackedScene" uid="uid://nfalprjnvir6" path="res://scenes/furnitures/couch.tscn" id="7_axmcd"]
+[ext_resource type="PackedScene" uid="uid://doptxjnj1r5o2" path="res://scenes/Yann_scene/Test_player_yco.tscn" id="8_axmcd"]
+
+[node name="FPLevel" unique_id=613154552 instance=ExtResource("1_a1ha7")]
+script = ExtResource("2_o4rqx")
+first_person_player_scene = ExtResource("3_440xv")
+
+[node name="Items" type="Node3D" parent="Environment" parent_id_path=PackedInt32Array(862527610) index="1" unique_id=2018215964]
+
+[node name="Item3" parent="Environment/Items" index="0" unique_id=1595605640 instance=ExtResource("4_pgexn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8714688, -8.127878)
+
+[node name="Item2" parent="Environment/Items" index="1" unique_id=239620749 instance=ExtResource("4_pgexn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.7429376, -16.255756)
+mass = 1.0
+
+[node name="Item" parent="Environment/Items" index="2" unique_id=1513276634 instance=ExtResource("4_pgexn")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.6144063, -24.383635)
+
+[node name="PlayersContainer" parent="." index="1" unique_id=1969630333]
+script = ExtResource("5_j0dcn")
+
+[node name="Node3D" parent="." index="5" unique_id=339892515 instance=ExtResource("6_hlei0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3496127, 0.024999619, 1.3291464)
+
+[node name="RigidBody" parent="." index="6" unique_id=1979657341 instance=ExtResource("7_axmcd")]
+transform = Transform3D(-0.9854584, 0, 0.16991708, 0, 1, 0, -0.16991708, 0, -0.9854584, -1.8763919, 0.024999857, 3.8812985)
+
+[node name="TestPlayerYco" parent="." index="7" unique_id=966598809 instance=ExtResource("8_axmcd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.8763919, 0.024999857, -1.7813983)

@@ -20,6 +20,7 @@ surface_material_override/0 = SubResource("ShaderMaterial_w4ihr")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Wall2" unique_id=393868746]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.4122252)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2/StaticBody3D" unique_id=1365566199]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 4.4122252)
