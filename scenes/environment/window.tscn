@@ -24,6 +24,7 @@ surface_material_override/2 = ExtResource("4_4be2b")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Window" unique_id=1562693920]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.049654484, 0, 4.9302316)
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Window/StaticBody3D" unique_id=1993018152]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.049654484, 0, -4.9302316)
