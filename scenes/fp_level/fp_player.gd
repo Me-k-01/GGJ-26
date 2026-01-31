@@ -36,6 +36,8 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 @export_group("Holding Objects")
 @export var throw_force = 7.5
+@export var rotation_speed = 0.1
+var held_rotation_offset = Vector3.ZERO
 @export var follow_speed = 5.0
 @export var follow_distance = 2.5
 @export var max_distance_from_camera = 5.0
@@ -103,6 +105,13 @@ func _input(event):
 		request_interact.rpc()
 	if Input.is_action_just_pressed("throw"):
 		request_throw.rpc()
+	
+	if held_object != null:
+		if Input.is_action_just_pressed("rotate_up"):
+			held_rotation_offset.x -= 0.5 # Adjust increment as needed
+		if Input.is_action_just_pressed("rotate_down"):
+			held_rotation_offset.x += 0.5
+
 
 func _physics_process(delta):
 	if multiplayer.multiplayer_peer == null: return
@@ -159,14 +168,31 @@ func _process(_delta):
 	if interact_raycast.is_colliding():
 		var collider = interact_raycast.get_collider()
 		if collider is RigidBody3D and held_object == null :
-			$Control/CenterContainer/VBoxContainer/ButtonUp.visible = true
-			$Control/CenterContainer/VBoxContainer/ButtonDown.visible = true
+			$Control/CenterContainer/VBoxContainer/HBoxContainerTop/ButtonUp.visible = true
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownLeft.visible = true
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownLeft.text = "Hold"
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownRight.visible = true
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownRight.text = ""
+		elif collider is RigidBody3D :
+			$Control/CenterContainer/VBoxContainer/HBoxContainerTop/ButtonUp.visible = true
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownLeft.visible = true
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownLeft.text = "Drop"
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownRight.visible = true
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownRight.text = "Throw"
 		else :
-			$Control/CenterContainer/VBoxContainer/ButtonUp.visible = false
-			$Control/CenterContainer/VBoxContainer/ButtonDown.visible = false
+			$Control/CenterContainer/VBoxContainer/HBoxContainerTop/ButtonUp.visible = false
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownLeft.visible = false
+			$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownRight.visible = false
+	elif held_object != null :
+		$Control/CenterContainer/VBoxContainer/HBoxContainerTop/ButtonUp.visible = true
+		$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownLeft.visible = true
+		$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownLeft.text = "Drop"
+		$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownRight.visible = true
+		$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownRight.text = "Throw"
 	else :
-		$Control/CenterContainer/VBoxContainer/ButtonUp.visible = false
-		$Control/CenterContainer/VBoxContainer/ButtonDown.visible = false
+		$Control/CenterContainer/VBoxContainer/HBoxContainerTop/ButtonUp.visible = false
+		$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownLeft.visible = false
+		$Control/CenterContainer/VBoxContainer/HBoxContainerBottom/ButtonDownRight.visible = false
 
 
 func freeze():
@@ -334,7 +360,6 @@ func request_interact() -> void:
 	
 	if held_object != null:
 		_server_drop_object()
-		return
 
 	if interact_raycast.is_colliding():
 		var collider = interact_raycast.get_collider()
@@ -346,10 +371,15 @@ func request_interact() -> void:
 func request_throw() -> void:
 	#if not multiplayer.is_server(): return
 	
+	var max_impulse = 20.0
+	
 	if held_object != null:
 		var force = -$Camera3D.global_basis.z * throw_force * 10.0
+		force = force.limit_length(max_impulse * held_object.mass)
+		
 		held_object.apply_central_impulse(force)
 		_server_drop_object()
+		return
 
 ## --- Internal Server Logic ---
 
