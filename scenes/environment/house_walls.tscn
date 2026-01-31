@@ -8,8 +8,19 @@
 [ext_resource type="PackedScene" uid="uid://bwu3115o21uep" path="res://scenes/environment/roof.tscn" id="6_chqi5"]
 [ext_resource type="PackedScene" uid="uid://3wajgrje1e8c" path="res://scenes/environment/wall_door_static.tscn" id="6_fluca"]
 [ext_resource type="PackedScene" uid="uid://bvbn2vtc7n38b" path="res://assets/house/crime_scene_band.glb" id="8_bsh37"]
+[ext_resource type="Material" uid="uid://bisblq6ipjm71" path="res://assets/house/roof2.tres" id="9_fo681"]
 [ext_resource type="PackedScene" uid="uid://cwp1xrfxwclab" path="res://scenes/environment/floor.tscn" id="9_pesc6"]
 [ext_resource type="Material" uid="uid://dckdgdjra3pro" path="res://assets/house/wood_floor.tres" id="10_df4kn"]
+[ext_resource type="PackedScene" uid="uid://4pe0cdr42dh5" path="res://scenes/environment/_sb_env.tscn" id="11_2gwlo"]
+[ext_resource type="Shader" uid="uid://do8kvm65i8epi" path="res://assets/house/wall.gdshader" id="12_fo681"]
+[ext_resource type="Material" uid="uid://dvt8ymhjkw08k" path="res://assets/house/tile_floor.tres" id="14_buno7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_2gwlo"]
+material = ExtResource("9_fo681")
+size = Vector3(6.935, 0.15, 2.695)
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_fo681"]
+points = PackedVector3Array(3.5225396, 0.09011905, 1.3494445, -3.5225396, -0.13003968, -1.4025396, -3.5225396, 0.09011905, -1.4025396, 3.5225396, -0.13003968, -1.4025396, -3.5225396, -0.13003968, 1.3494445, -3.5225396, 0.09011905, 1.3494445, 3.5225396, 0.09011905, -1.4025396, 3.5225396, -0.13003968, 1.3494445)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xpk6x"]
 
@@ -42,6 +53,20 @@ _surfaces = [{
 }]
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_s3ub4")
+
+[sub_resource type="PrismMesh" id="PrismMesh_df4kn"]
+left_to_right = 0.0
+size = Vector3(5.785, 4.075, 0.085)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_buno7"]
+render_priority = 0
+shader = ExtResource("12_fo681")
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_2gwlo"]
+points = PackedVector3Array(2.7543304, -1.8075589, -0.1709127, -2.7543304, 2.0487304, 0.19638889, -2.5708234, 1.9565095, 0.19638889, -2.9384127, -2.0834126, 0.19638889, -2.9384127, 2.0487304, -0.1709127, 2.9384127, -2.0834126, 0.19638889, -2.9384127, -2.0834126, -0.1709127, 2.9384127, -2.0834126, -0.1709127, -2.2952754, 1.7724721, -0.1709127, 2.3873165, -1.5321097, 0.19638889, -2.9384127, 2.0487304, 0.19638889, 1.7441792, -1.0730276, -0.1709127, -2.2952754, 1.7724721, 0.19638889, 2.9384127, -1.9911917, 0.19638889, -2.7543304, 2.0487304, -0.1709127, 1.7441792, -1.0730276, 0.19638889, 2.9384127, -1.9911917, -0.1709127, 2.7543304, -1.8075589, 0.19638889, 2.3873165, -1.5321097, -0.1709127, -2.5708234, 1.9565095, -0.1709127)
+
+[sub_resource type="QuadMesh" id="QuadMesh_fo681"]
+size = Vector2(14.92, 16.05)
 
 [node name="House Framework" type="Node3D" unique_id=339892515]
 
@@ -145,6 +170,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.10759e-05, -9.536743e-07, 1
 [node name="Roof4" parent="Top floor outer wall" unique_id=1803795988 instance=ExtResource("6_chqi5")]
 transform = Transform3D(1.05, 0, 0, 0, 0.8674858, 0.5915812, 0, -0.5915812, 0.8674858, -0.32926628, -1.1346854, 0.33392075)
 
+[node name="Roof" parent="Top floor outer wall" unique_id=281782056 instance=ExtResource("11_2gwlo")]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Top floor outer wall/Roof" unique_id=25050269]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.854334, 4.4123645, -9.138833)
+mesh = SubResource("BoxMesh_2gwlo")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Top floor outer wall/Roof" unique_id=1544967525]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.854334, 4.4123645, -9.138833)
+shape = SubResource("ConvexPolygonShape3D_fo681")
+
 [node name="Bottom Walls" type="Node3D" parent="." unique_id=596875194]
 
 [node name="Big Wall Window" parent="Bottom Walls" unique_id=1772632751 instance=ExtResource("1_hg27y")]
@@ -219,56 +254,89 @@ transform = Transform3D(-4.371139e-08, 0, 1, 0, 1, 0, -1, 0, -4.371139e-08, 12.1
 [node name="Entry door" parent="Bottom Walls" unique_id=177244777 instance=ExtResource("6_fluca")]
 transform = Transform3D(0.9999466, 0.010332165, 0, -0.010332165, 0.9999466, 0, 0, 0, 1, -0.025221419, 0.13373092, -3.2954562)
 
-[node name="Floor" parent="." unique_id=281782056 instance=ExtResource("9_pesc6")]
+[node name="Top Floor Floor" type="Node3D" parent="." unique_id=289867907]
+
+[node name="Floor" parent="Top Floor Floor" unique_id=2038861907 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3844509, 4.3385005, 2.1775806)
 
-[node name="Floor2" parent="." unique_id=1885673143 instance=ExtResource("9_pesc6")]
+[node name="Floor2" parent="Top Floor Floor" unique_id=1885673143 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3844509, 4.3385005, -0.5801744)
 
-[node name="Floor5" parent="." unique_id=87879457 instance=ExtResource("9_pesc6")]
+[node name="Floor5" parent="Top Floor Floor" unique_id=87879457 instance=ExtResource("9_pesc6")]
 transform = Transform3D(0.99587965, 0, -0.09068472, 0, 1, 0, 0.09068472, 0, 0.99587965, 12.9601965, 4.3385005, 3.519743)
 
-[node name="Floor6" parent="." unique_id=1367521406 instance=ExtResource("9_pesc6")]
+[node name="Floor6" parent="Top Floor Floor" unique_id=1367521406 instance=ExtResource("9_pesc6")]
 transform = Transform3D(0.9967789, 0, -0.08019893, 0, 1, 0, 0.08019893, 0, 0.9967789, 13.397815, 4.3385005, -2.0792987)
 
-[node name="Floor7" parent="." unique_id=65068914 instance=ExtResource("9_pesc6")]
+[node name="Floor7" parent="Top Floor Floor" unique_id=65068914 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.512729, 4.3385005, 0.69360805)
 
-[node name="Floor8" parent="." unique_id=1560983763 instance=ExtResource("9_pesc6")]
+[node name="Floor8" parent="Top Floor Floor" unique_id=1560983763 instance=ExtResource("9_pesc6")]
 transform = Transform3D(0.99736285, 0, 0.07257674, 0, 0.8818022, 0, -0.07257674, 0, 0.99736285, 10.67763, 4.3385005, -2.0470679)
 
-[node name="Floor9" parent="." unique_id=1965916376 instance=ExtResource("9_pesc6")]
+[node name="Floor9" parent="Top Floor Floor" unique_id=1965916376 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.6466646, 4.3385005, 0.66487837)
 
-[node name="Floor11" parent="." unique_id=2030093279 instance=ExtResource("9_pesc6")]
+[node name="Floor11" parent="Top Floor Floor" unique_id=2030093279 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.492546, 4.3385005, 3.567564)
 
-[node name="Floor13" parent="." unique_id=595981146 instance=ExtResource("9_pesc6")]
+[node name="Floor13" parent="Top Floor Floor" unique_id=595981146 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.607131, 4.3385005, 3.567564)
 
-[node name="Floor10" parent="." unique_id=868132202 instance=ExtResource("9_pesc6")]
+[node name="Floor10" parent="Top Floor Floor" unique_id=868132202 instance=ExtResource("9_pesc6")]
 transform = Transform3D(0.8099188, 0, 0.586542, 0, 0.82786846, 0, -0.586542, 0, 0.8099188, 8.828815, 4.3385005, -1.3639455)
 
-[node name="Floor3" parent="." unique_id=408979541 instance=ExtResource("9_pesc6")]
+[node name="Floor3" parent="Top Floor Floor" unique_id=408979541 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.259243, 4.3385005, 2.1775806)
 
-[node name="Floor4" parent="." unique_id=1425665801 instance=ExtResource("9_pesc6")]
+[node name="Floor4" parent="Top Floor Floor" unique_id=1425665801 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.259243, 4.3385005, -0.5801744)
 
-[node name="Floor15" parent="." unique_id=885437161 instance=ExtResource("9_pesc6")]
+[node name="Floor15" parent="Top Floor Floor" unique_id=885437161 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8494544, 4.396136, 2.1775806)
 
-[node name="Floor16" parent="." unique_id=1004851298 instance=ExtResource("9_pesc6")]
+[node name="Floor16" parent="Top Floor Floor" unique_id=1004851298 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.8494544, 4.396136, -0.5801744)
 
-[node name="Floor12" parent="." unique_id=1683195165 instance=ExtResource("9_pesc6")]
+[node name="Floor12" parent="Top Floor Floor" unique_id=1683195165 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.131651, 4.3385005, -3.4212337)
 
-[node name="Floor14" parent="." unique_id=774148947 instance=ExtResource("9_pesc6")]
+[node name="Floor14" parent="Top Floor Floor" unique_id=774148947 instance=ExtResource("9_pesc6")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.131651, 4.3385005, -6.2832994)
 
-[node name="Plane" type="MeshInstance3D" parent="." unique_id=1062182068]
-transform = Transform3D(1.3731163, 0, -0.13299379, 0, 1, 0, 0.12286141, 0, 1.4863572, 13.174043, 4.45294, 0.53091645)
+[node name="Hole" type="MeshInstance3D" parent="Top Floor Floor" unique_id=1062182068]
+transform = Transform3D(1.3731163, 0, -0.13299379, 0, 1, 0, 0.12286141, 0, 1.4863572, 13.246603, 4.45294, 0.6372744)
 mesh = SubResource("ArrayMesh_h2vfs")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("10_df4kn")
+
+[node name="Wall Roof" parent="." unique_id=136299327 instance=ExtResource("11_2gwlo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.73851, 4.9820657, -3.2858348)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall Roof" unique_id=1653818163]
+transform = Transform3D(-0.0022166707, 3.7656413e-05, 0.9999975, -0.0023732574, 0.99999714, -4.2917138e-05, -0.9999947, -0.0023733468, -0.0022165775, 1.7964535, 1.3900161, -1.6525102)
+mesh = SubResource("PrismMesh_df4kn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_buno7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Roof" unique_id=1612861142]
+transform = Transform3D(-0.018080685, 0, 0.9998365, -0.0023732574, 0.9999972, -4.2917138e-05, -0.9998337, -0.0023736455, -0.018080635, 1.7823191, 1.3900161, -1.6525102)
+shape = SubResource("ConvexPolygonShape3D_2gwlo")
+
+[node name="Wall Roof2" parent="." unique_id=1266349077 instance=ExtResource("11_2gwlo")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.7783813, 4.9820657, -3.2858348)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Wall Roof2" unique_id=1173751570]
+transform = Transform3D(0.00043622032, 4.395254e-05, 0.99999976, -0.0023732574, 0.9999971, -4.2917127e-05, -0.999997, -0.0023732383, 0.0004363237, 1.7692361, 1.3900161, -1.6525102)
+mesh = SubResource("PrismMesh_df4kn")
+skeleton = NodePath("../..")
+surface_material_override/0 = SubResource("ShaderMaterial_buno7")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Wall Roof2" unique_id=1379113551]
+transform = Transform3D(-0.018080685, 0, 0.9998365, -0.0023732574, 0.9999972, -4.2917138e-05, -0.9998337, -0.0023736455, -0.018080635, 1.7823191, 1.3900161, -1.6525102)
+shape = SubResource("ConvexPolygonShape3D_2gwlo")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1126775332]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 7.391108, -1.2778087e-07, -2.9232855)
+mesh = SubResource("QuadMesh_fo681")
+surface_material_override/0 = ExtResource("14_buno7")

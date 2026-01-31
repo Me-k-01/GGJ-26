@@ -1,0 +1,7 @@
+[gd_resource type="StandardMaterial3D" format=3 uid="uid://dvt8ymhjkw08k"]
+
+[ext_resource type="Texture2D" uid="uid://bjui2npbgpfnh" path="res://assets/house/interior_tiles_diff_2k.jpg" id="1_echa2"]
+
+[resource]
+albedo_texture = ExtResource("1_echa2")
+uv1_scale = Vector3(4.4, 4.4, 4.4)
