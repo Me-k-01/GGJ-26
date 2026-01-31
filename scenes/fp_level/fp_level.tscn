@@ -10,7 +10,7 @@
 script = ExtResource("2_pjep5")
 first_person_player_scene = ExtResource("3_p5v48")
 
-[node name="Items" type="Node3D" parent="Environment" parent_id_path=PackedInt32Array(862527610) index="1" unique_id=2018215964]
+[node name="Items" type="Node3D" parent="Environment" parent_id_path=PackedInt32Array(81015645) index="1" unique_id=2018215964]
 
 [node name="Item3" parent="Environment/Items" index="0" unique_id=1595605640 instance=ExtResource("4_uyoeo")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.8714688, -8.127878)
