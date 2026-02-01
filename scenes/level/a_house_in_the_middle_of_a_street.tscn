@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://dlf24ftvt1q16"]
 
 [ext_resource type="PackedScene" uid="uid://bcdmda45cbxaa" path="res://scenes/environment/house_walls.tscn" id="1_u3uc2"]
+[ext_resource type="PackedScene" uid="uid://cdxfysc6611hq" path="res://scenes/environment/bathroom_sink.tscn" id="2_2j0tl"]
 [ext_resource type="PackedScene" uid="uid://tv2qnmts6imr" path="res://scenes/environment/shelf_big.tscn" id="2_kjeh0"]
 [ext_resource type="PackedScene" uid="uid://tp3yhsqxlubm" path="res://scenes/environment/extractor_hood.tscn" id="3_fdg1j"]
 [ext_resource type="PackedScene" uid="uid://cil4f4ssbfp7l" path="res://scenes/environment/stove.tscn" id="4_b08bv"]
@@ -10,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://c7aw3xn43pfaa" path="res://scenes/furnitures/pillow_a.tscn" id="7_esp5a"]
 [ext_resource type="PackedScene" uid="uid://b5jjxxswkdeq" path="res://scenes/furnitures/table_medium.tscn" id="8_q7bk5"]
 [ext_resource type="PackedScene" uid="uid://bww2c1y2aqgap" path="res://scenes/furnitures/couch.tscn" id="9_wyu6l"]
+[ext_resource type="PackedScene" uid="uid://c6hn5dwc445ku" path="res://scenes/environment/toilet.tscn" id="10_d6lyb"]
 [ext_resource type="PackedScene" uid="uid://bk020ww4i7127" path="res://scenes/furnitures/potted_plant.tscn" id="10_r3die"]
 [ext_resource type="PackedScene" uid="uid://5am2hcka5xt2" path="res://scenes/furnitures/table_small.tscn" id="11_dikc6"]
 [ext_resource type="PackedScene" uid="uid://dajesjc3clfk4" path="res://scenes/furnitures/table_low.tscn" id="12_8cog2"]
@@ -29,6 +31,7 @@
 [ext_resource type="Material" uid="uid://ctokw0pa0xp7" path="res://assets/house/wood.tres" id="27_0uhm0"]
 [ext_resource type="PackedScene" uid="uid://4pe0cdr42dh5" path="res://scenes/environment/_sb_env.tscn" id="27_wx1er"]
 [ext_resource type="PackedScene" uid="uid://g6cvmmqkj2a0" path="res://scenes/contraband/Diamond.tscn" id="29_c6ike"]
+[ext_resource type="PackedScene" uid="uid://ymnv7ewy7jd5" path="res://scenes/furnitures/tv.tscn" id="29_s0x7q"]
 [ext_resource type="PackedScene" uid="uid://cdralbc5p3o4" path="res://scenes/contraband/Bong.tscn" id="29_vep5k"]
 [ext_resource type="PackedScene" uid="uid://cfpw0rkokv1vp" path="res://scenes/contraband/Cash.tscn" id="30_w3str"]
 [ext_resource type="PackedScene" uid="uid://8xvfn68xykqh" path="res://scenes/contraband/Bomb.tscn" id="32_4ce6n"]
@@ -138,10 +141,13 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.122778416, 0.042997718, 1.
 [node name="Static furnitures" parent="House" unique_id=339892515 instance=ExtResource("1_u3uc2")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.490265, 0, 0)
 
+[node name="Bathroom Sink" parent="House/Static furnitures" unique_id=281782056 instance=ExtResource("2_2j0tl")]
+transform = Transform3D(-0.003944479, 0, -0.99999225, 0, 1, 0, 0.99999225, 0, -0.003944479, 11.635064, 5.551501, 2.4839728)
+
 [node name="Big Shelf" parent="House/Static furnitures" unique_id=1932112579 instance=ExtResource("2_kjeh0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.651673, 2.867838, -7.2822356)
 
-[node name="Extractor Hood" parent="House/Static furnitures" unique_id=281782056 instance=ExtResource("3_fdg1j")]
+[node name="Extractor Hood" parent="House/Static furnitures" unique_id=816578875 instance=ExtResource("3_fdg1j")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 10.333431, 0.40311098, 4.669081)
 
 [node name="Stove" parent="House/Static furnitures" unique_id=2074681560 instance=ExtResource("4_b08bv")]
@@ -221,6 +227,9 @@ mesh = SubResource("ArrayMesh_id6en")
 skeleton = NodePath("")
 surface_material_override/0 = ExtResource("27_0uhm0")
 
+[node name="Toilet" parent="House/Static furnitures" unique_id=740165436 instance=ExtResource("10_d6lyb")]
+transform = Transform3D(-0.99999285, 0, 0.0037874212, 0, 1, 0, -0.0037874212, 0, -0.99999285, 13.411747, 4.47661, 4.15671)
+
 [node name="CarPolice" parent="House" unique_id=544559362 instance=ExtResource("6_2yo3a")]
 transform = Transform3D(7, 0, 0, 0, 7, 0, 0, 0, 7, -15.023838, 0.45990196, 0.882339)
 skeleton = NodePath("../../..")
@@ -258,7 +267,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.6319876, 1.0411685, -6.746
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.620055, 0.025000095, -6.723326)
 
 [node name="Table Low" parent="House/Physics Furnitures" unique_id=614953863 instance=ExtResource("12_8cog2")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.9394975, 0.025000095, -0.20818305)
+transform = Transform3D(0.95228934, 0, 0.30519673, 0, 1, 0, -0.30519673, 0, 0.95228934, -5.0347056, 0.025000095, -0.50525653)
 
 [node name="Cactus" parent="House/Physics Furnitures" unique_id=1133553467 instance=ExtResource("19_q7bk5")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.9432054, 2.4931812, 4.121051)
@@ -298,6 +307,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.806287, 0.006789565, -6.95
 [node name="Paper Towel" parent="House/Physics Furnitures" unique_id=1594201553 instance=ExtResource("24_1f3eg")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.824929, -0.01799786, -4.062153)
 
+[node name="TV" parent="House/Physics Furnitures" unique_id=2018429797 instance=ExtResource("29_s0x7q")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.4522605, 0.5120016, -0.7753581)
+
 [node name="Floor" type="StaticBody3D" parent="." unique_id=464707463]
 collision_layer = 2
 
@@ -322,7 +334,7 @@ shadow_blur = 0.5
 transform = Transform3D(1, 0, 0, 0, 0.87944096, 0.476008, 0, -0.476008, 0.87944096, 0.03250867, 1.0813193, -6.3342266)
 
 [node name="Bong" parent="Contraband" unique_id=679400702 instance=ExtResource("29_vep5k")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.330572, 0.66958714, 0.83619857)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.3348274, 0.66958714, 0.7799274)
 
 [node name="Cash Bundle" parent="Contraband" unique_id=1836830597 instance=ExtResource("30_w3str")]
 transform = Transform3D(0.8373754, 0, -0.54662824, 0, 1, 0, 0.54662824, 0, 0.8373754, -0.021776825, 1.1176083, -7.3461943)
@@ -364,7 +376,7 @@ transform = Transform3D(1, 0, 0, 0, 0.9998171, -0.019127643, 0, 0.019127643, 0.9
 transform = Transform3D(1, 0, 0, 0, -0.011990152, 0.9999281, 0, -0.9999281, -0.011990152, 0.0022598505, 1.4004291, 3.1622353)
 
 [node name="ATM" parent="Contraband" unique_id=2047918818 instance=ExtResource("37_taxx3")]
-transform = Transform3D(-0.14849427, -0.029157644, -0.9884833, -0.19267616, 0.98126245, -2.7939677e-09, 0.9699615, 0.19045714, -0.15132982, 3.4759672, 0.6629115, -5.066853)
+transform = Transform3D(-0.14534463, -0.04213851, -0.98848325, -0.27845478, 0.9604494, -2.7939677e-09, 0.94938815, 0.2752479, -0.15132982, 3.313973, 0.72930145, -5.3233147)
 
 [node name="Blunt2" parent="Contraband" unique_id=1718272393 instance=ExtResource("36_len8j")]
 transform = Transform3D(0.7795676, 0.6263182, 0, 0.00750965, -0.009347134, 0.9999281, 0.62627316, -0.7795116, -0.011990152, -0.37237886, 1.3968202, 2.8612657)
