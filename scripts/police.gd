@@ -40,7 +40,8 @@ func _enter_tree():
 	$SpringArmOffset/SpringArm3D/Camera3D.current = is_multiplayer_authority()
 
 func set_all_evidences() -> void :
-	evidences = get_tree().get_nodes_in_group("evidences")
+	evidences = get_tree().get_nodes_in_group("evidence")
+	print(evidences)
 
 func _ready():
 	var is_local_player = is_multiplayer_authority()

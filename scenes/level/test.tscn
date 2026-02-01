@@ -10,18 +10,8 @@
 
 [node name="FPLevel" unique_id=613154552 instance=ExtResource("1_6nsnc")]
 
-[node name="Police" parent="." index="5" unique_id=763145713 node_paths=PackedStringArray("evidence1", "evidence2", "evidence3", "evidence4", "evidence5", "evidence6", "evidence7", "evidence8", "evidence9", "evidence10") instance=ExtResource("3_ls1i8")]
+[node name="Police" parent="." index="5" unique_id=763145713 instance=ExtResource("3_ls1i8")]
 transform = Transform3D(-0.0041364753, 0, 0.9999914, 0, 1, 0, -0.9999914, 0, -0.0041364753, -5.56701, 0.47837555, -1.0495505)
-evidence1 = NodePath("../Blunt")
-evidence2 = NodePath("../Blunt2")
-evidence3 = NodePath("../Blunt3")
-evidence4 = NodePath("../Bomb")
-evidence5 = NodePath("../Bomb2")
-evidence6 = NodePath("../Flour")
-evidence7 = NodePath("../Flour2")
-evidence8 = NodePath("../Blood")
-evidence9 = NodePath("../Candies")
-evidence10 = NodePath("../Candies2")
 
 [node name="Blunt" parent="." index="6" unique_id=1595605640 instance=ExtResource("3_fhgba")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.066896915, 1.5326157, 2.5733302)
@@ -49,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.0186925, 0.61578345, 0.691
 
 [node name="Blood" parent="." index="14" unique_id=312466757 instance=ExtResource("7_vwryx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.97609115, 0.025000095, -3.3947287)
+surface_material_override/0 = null
 
 [node name="Candies2" parent="." index="15" unique_id=2025997957 instance=ExtResource("6_dns35")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.360857, 1.1127093, -5.2974887)
