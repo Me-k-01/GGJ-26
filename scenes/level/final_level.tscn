@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://815a3rr5u3r5"]
+
+[ext_resource type="PackedScene" uid="uid://biaspx2jgs237" path="res://scenes/fp_level/fp_level.tscn" id="1_kx54g"]
+
+[node name="FPLevel" unique_id=613154552 instance=ExtResource("1_kx54g")]

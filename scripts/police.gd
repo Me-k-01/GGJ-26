@@ -11,16 +11,7 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 
 var player_inventory: PlayerInventory
 
-@export var evidence1 : RigidBody3D
-@export var evidence2 : RigidBody3D
-@export var evidence3 : RigidBody3D
-@export var evidence4 : RigidBody3D
-@export var evidence5 : RigidBody3D
-@export var evidence6 : RigidBody3D
-@export var evidence7 : RigidBody3D
-@export var evidence8 : RigidBody3D
-@export var evidence9 : RigidBody3D
-@export var evidence10 : RigidBody3D
+var evidences : Array = []
 
 @export_category("Objects")
 @export var _body: Node3D = null
@@ -48,6 +39,9 @@ func _enter_tree():
 	set_multiplayer_authority(str(name).to_int())
 	$SpringArmOffset/SpringArm3D/Camera3D.current = is_multiplayer_authority()
 
+func set_all_evidences() -> void :
+	evidences = get_tree().get_nodes_in_group("evidences")
+
 func _ready():
 	var is_local_player = is_multiplayer_authority()
 	var local_client_id = multiplayer.get_unique_id()
@@ -63,6 +57,9 @@ func _ready():
 	else:
 		if get_multiplayer_authority() == local_client_id:
 			request_inventory_sync.rpc_id(1)
+
+	await get_tree().process_frame
+	set_all_evidences()
 
 func _physics_process(delta):
 	
@@ -349,8 +346,7 @@ func _add_starting_items():
 		player_inventory.add_item(potion, 3)
 
 func look_for_evidence():
-	var all_evidence = [evidence1, evidence2, evidence3, evidence4, 
-evidence5, evidence6, evidence7, evidence8,evidence9, evidence10]
+	var all_evidence = evidences
 	var space_rid = get_world_3d().space
 	var space_state = PhysicsServer3D.space_get_direct_state(space_rid)
 	
@@ -358,16 +354,17 @@ evidence5, evidence6, evidence7, evidence8,evidence9, evidence10]
 	var result = []
 	var sub_results; var target
 	var queries
-	print(all_evidence)
+	#print(all_evidence)
 	for evid:RigidBody3D in all_evidence :
 		sub_results = []
 		queries = []
-		target = evid.global_position
-		queries.append(PhysicsRayQueryParameters3D.create(eyes, target)); queries[0].exclude = [self]; queries[0].collide_with_areas = true
-		#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(0,0,.05))); queries[1].exclude = [self]; queries[1].collide_with_areas = true
-		#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(.05,0,0))); queries[2].exclude = [self]; queries[2].collide_with_areas = true
-		#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(0,0,-0.05))); queries[3].exclude = [self]; queries[3].collide_with_areas = true
-		#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(-.05,0,0))); queries[4].exclude = [self]; queries[4].collide_with_areas = true
+		if evid :
+			target = evid.global_position
+			queries.append(PhysicsRayQueryParameters3D.create(eyes, target)); queries[0].exclude = [self]; queries[0].collide_with_areas = true
+			#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(0,0,.05))); queries[1].exclude = [self]; queries[1].collide_with_areas = true
+			#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(.05,0,0))); queries[2].exclude = [self]; queries[2].collide_with_areas = true
+			#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(0,0,-0.05))); queries[3].exclude = [self]; queries[3].collide_with_areas = true
+			#queries.append(PhysicsRayQueryParameters3D.create(eyes, target+Vector3(-.05,0,0))); queries[4].exclude = [self]; queries[4].collide_with_areas = true
 		
 		for query in queries:
 			sub_results.append(space_state.intersect_ray(query))
@@ -382,5 +379,5 @@ evidence5, evidence6, evidence7, evidence8,evidence9, evidence10]
 			for evid in all_evidence :
 				if rayline:
 					if rayline["collider"] == evid :
-						print("item ", n, " seen")
+						#print("item ", n, " seen")
 						set_player_skin(SkinColor.RED)

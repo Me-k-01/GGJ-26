@@ -1,6 +1,6 @@
 [gd_scene format=4 uid="uid://78dta1tn0o7k"]
 
-[ext_resource type="Script" uid="uid://cdfv55lx15v3k" path="res://scripts/police.gd" id="1_g0rra"]
+[ext_resource type="Script" uid="uid://c3b0a0eeiqg8b" path="res://scripts/police.gd" id="1_g0rra"]
 [ext_resource type="Texture2D" uid="uid://fpmmv2oxjcdv" path="res://assets/characters/player/GodotRobotPaletteSwap/GodotPalette.png" id="2_eyc71"]
 [ext_resource type="Texture2D" uid="uid://cw6pxwst2gh85" path="res://assets/characters/player/GodotRobotPaletteSwap/GodotYellowPalette.png" id="3_qb8d2"]
 [ext_resource type="Texture2D" uid="uid://bbid6mowxhd5b" path="res://assets/characters/player/GodotRobotPaletteSwap/GodotGreenPalette.png" id="4_uisgk"]
