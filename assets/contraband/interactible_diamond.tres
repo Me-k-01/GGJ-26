@@ -10,4 +10,4 @@ shader_parameter/bounce_amplitude = 0.5
 shader_parameter/bounce_frequency = 1.0
 shader_parameter/color_mask = Color(1, 1, 1, 1)
 shader_parameter/glow_color = Color(1, 0.679, 0.23, 1)
-shader_parameter/alpha = 0.090000004275
+shader_parameter/alpha = 0.0130000006175

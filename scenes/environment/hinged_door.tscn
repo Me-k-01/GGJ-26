@@ -6,8 +6,8 @@
 
 [sub_resource type="BoxMesh" id="BoxMesh_xukoe"]
 
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_a78wr"]
-points = PackedVector3Array(0.5, 0.5, 0.5, 0.5, 0.5, -0.5, -0.5, 0.5, 0.5, 0.5, -0.5, 0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5, 0.5, -0.5, -0.5, -0.5)
+[sub_resource type="BoxShape3D" id="BoxShape3D_a78wr"]
+size = Vector3(0.19433594, 2.7329712, 0.17767334)
 
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3xyg2"]
 points = PackedVector3Array(0.044938684, 4.183135, -5.588941, 0.33389297, 2.0426161, -6.0565963, 0.32634202, 2.10183, -6.0976186, 0.044938684, 4.183135, -7.794649, -0.054851115, 4.183135, -5.588941, 0.044938684, -0.107142, -5.588941, 0.33389297, 2.0426161, -6.138425, -0.054851115, 4.183135, -7.794649, 0.044938684, -0.107142, -7.794649, -0.331112, 2.0426161, -6.0565963, -0.054851115, -0.107142, -5.588941, -0.054851115, -0.107142, -7.794649, -0.331112, 2.0426161, -6.138425, -0.32362613, 1.9829822, -6.0976186)
@@ -21,15 +21,14 @@ transform = Transform3D(0.2, 0, 0, 0, 2.8, 0, 0, 0, 0.2, 0, 1.35, -0.2)
 mesh = SubResource("BoxMesh_xukoe")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge" unique_id=1343688889]
-transform = Transform3D(0.2, 0, 0, 0, 2.8, 0, 0, 0, 0.2, 0, 1.35, -0.2)
-shape = SubResource("ConvexPolygonShape3D_a78wr")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0034179688, 1.3469177, -0.20204467)
+shape = SubResource("BoxShape3D_a78wr")
 
 [node name="Door" type="RigidBody3D" parent="." unique_id=504040393]
-transform = Transform3D(1.45, 0, 0, 0, 1.45, 0, 0, 0, 1.45, 0, 0.07741642, -6.9985785)
-mass = 20.0
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07741642, -6.9985785)
 
 [node name="DoorMesh" type="MeshInstance3D" parent="Door" unique_id=1544158354]
-transform = Transform3D(0.42249995, 0, 0, 0, 0.42249995, 0, 0, 0, 0.42249995, 0, 0, 8.01728)
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 0, 0, 11.641948)
 layers = 2
 mesh = ExtResource("1_a78wr")
 skeleton = NodePath("")
@@ -37,7 +36,7 @@ surface_material_override/0 = ExtResource("2_3xyg2")
 surface_material_override/1 = ExtResource("3_76cj8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Door" unique_id=1704233239]
-transform = Transform3D(0.42249995, 0, 0, 0, 0.42249995, 0, 0, 0, 0.42249995, 0, 0, 8.01728)
+transform = Transform3D(0.615, 0, 0, 0, 0.615, 0, 0, 0, 0.615, 0, 0, 11.641948)
 shape = SubResource("ConvexPolygonShape3D_3xyg2")
 
 [node name="HingeJoint3D" type="HingeJoint3D" parent="." unique_id=957901239]
