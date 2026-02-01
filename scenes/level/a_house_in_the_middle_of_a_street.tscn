@@ -359,7 +359,6 @@ transform = Transform3D(0.3120033, -0.950081, 0, 0.950081, 0.3120033, 0, 0, 0, 1
 
 [node name="Blood decals" parent="Contraband" unique_id=1639560470 instance=ExtResource("35_bkqbj")]
 transform = Transform3D(1, 0, 0, 0, 0.9998171, -0.019127643, 0, 0.019127643, 0.9998171, 6.0369606, 0.0592618, 1.4025689)
-surface_material_override/0 = null
 
 [node name="Blunt" parent="Contraband" unique_id=516231144 instance=ExtResource("36_len8j")]
 transform = Transform3D(1, 0, 0, 0, -0.011990152, 0.9999281, 0, -0.9999281, -0.011990152, 0.0022598505, 1.4004291, 3.1622353)
@@ -369,3 +368,6 @@ transform = Transform3D(-0.14849427, -0.029157644, -0.9884833, -0.19267616, 0.98
 
 [node name="Blunt2" parent="Contraband" unique_id=1718272393 instance=ExtResource("36_len8j")]
 transform = Transform3D(0.7795676, 0.6263182, 0, 0.00750965, -0.009347134, 0.9999281, 0.62627316, -0.7795116, -0.011990152, -0.37237886, 1.3968202, 2.8612657)
+
+[node name="Blood decals2" parent="Contraband" unique_id=1966451236 instance=ExtResource("35_bkqbj")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.503962, 0.025000095, 0.65405893)
