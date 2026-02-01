@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://btrquemn11sm6"]
+
+[ext_resource type="Shader" uid="uid://cp5miad5mw5ud" path="res://assets/contraband/interactible.gdshader" id="1_lr3bu"]
+[ext_resource type="Texture2D" uid="uid://dcwxjyqmryj8n" path="res://assets/contraband/high_detailed_automatic_teller_machine_atm_0.jpg" id="2_8tj6p"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_lr3bu")
+shader_parameter/spin_speed = 1.0
+shader_parameter/bounce_amplitude = 0.5
+shader_parameter/bounce_frequency = 1.0
+shader_parameter/asset_texture = ExtResource("2_8tj6p")
+shader_parameter/color_mask = Color(1, 1, 1, 1)
+shader_parameter/glow_color = Color(1, 0.679, 0.23, 1)
+shader_parameter/alpha = 1.0

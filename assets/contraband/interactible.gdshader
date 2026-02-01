@@ -30,7 +30,7 @@ void fragment() {
 	vec4 tex = texture(asset_texture, UV);
 	ALBEDO = tex.rgb * color_mask;
 	float fresnel_val = fresnel(3.0, NORMAL, VIEW);
-	ALPHA = fresnel_val * (1.0-alpha) + alpha * tex.a;
+	ALPHA = fresnel_val * (1.0-alpha) + (1.0-fresnel_val) * alpha * tex.a;
 	EMISSION = fresnel_val * glow_color.rgb *10.0;
 }
 	
