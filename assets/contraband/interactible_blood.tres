@@ -1,0 +1,15 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://bth1plpdy4jd4"]
+
+[ext_resource type="Shader" uid="uid://cp5miad5mw5ud" path="res://assets/contraband/interactible.gdshader" id="1_8eso4"]
+[ext_resource type="Texture2D" uid="uid://cnd3ghfsq722s" path="res://assets/contraband/Blood_Stain_realistic-blood-stain-on-transparent-surface-depicting-a-dramatic-scene-of-potential-injury-or-violence-real-blood-stain-on-transparent-background-free-png.png" id="2_q004c"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_8eso4")
+shader_parameter/spin_speed = 1.0
+shader_parameter/bounce_amplitude = 0.5
+shader_parameter/bounce_frequency = 1.0
+shader_parameter/asset_texture = ExtResource("2_q004c")
+shader_parameter/color_mask = Color(1, 1, 1, 1)
+shader_parameter/glow_color = Color(1, 0.679, 0.23, 1)
+shader_parameter/alpha = 1.0

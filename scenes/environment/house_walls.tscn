@@ -257,10 +257,10 @@ transform = Transform3D(0.9999466, 0.010332165, 0, -0.010332165, 0.9999466, 0, 0
 [node name="Top Floor Floor" type="Node3D" parent="." unique_id=289867907]
 
 [node name="Floor" parent="Top Floor Floor" unique_id=2038861907 instance=ExtResource("9_pesc6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3844509, 4.3385005, 2.1775806)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4389186, 4.3385005, 2.1775806)
 
 [node name="Floor2" parent="Top Floor Floor" unique_id=1885673143 instance=ExtResource("9_pesc6")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.3844509, 4.3385005, -0.5801744)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.4389186, 4.3385005, -0.5801744)
 
 [node name="Floor5" parent="Top Floor Floor" unique_id=87879457 instance=ExtResource("9_pesc6")]
 transform = Transform3D(0.99587965, 0, -0.09068472, 0, 1, 0, 0.09068472, 0, 0.99587965, 12.9601965, 4.3385005, 3.519743)

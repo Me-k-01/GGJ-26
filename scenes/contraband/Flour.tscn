@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_5oj0y"]
 [ext_resource type="Texture2D" uid="uid://m0jcccxgrbxu" path="res://assets/contraband/Flour_pack_1_Material.png" id="2_akugs"]
+[ext_resource type="Material" uid="uid://cw5kat747gmu2" path="res://assets/contraband/interactible_candies.tres" id="3_8tx1d"]
 [ext_resource type="Texture2D" uid="uid://c40hj5a5mx1sx" path="res://assets/contraband/Flour_pack_1_Material_1.png" id="3_f3kpf"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
@@ -198,6 +199,7 @@ transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.0002912283, 0, 0.1352
 [node name="Sac" type="MeshInstance3D" parent="Flour_pack_1" unique_id=1018142397]
 mesh = SubResource("ArrayMesh_0bcsl")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("3_8tx1d")
 
 [node name="Fermeture" type="MeshInstance3D" parent="Flour_pack_1" unique_id=1697297151]
 transform = Transform3D(1.0682331, 0, 0, 0, 0.08405098, 0, 0, 0, 0.06858857, 0, 1.8841591, 0)

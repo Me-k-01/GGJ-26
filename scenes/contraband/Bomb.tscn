@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://8xvfn68xykqh"]
 
 [ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_mlnib"]
+[ext_resource type="Material" uid="uid://dm5hm13wrv84t" path="res://assets/contraband/interactible_bomb.tres" id="2_4g3cx"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
 properties/0/path = NodePath(".:position")
@@ -66,7 +67,7 @@ shadow_mesh = SubResource("ArrayMesh_iivk3")
 [node name="Bomb" type="RigidBody3D" unique_id=1595605640]
 collision_layer = 5
 collision_mask = 6
-mass = 10.0
+mass = 70.0
 script = ExtResource("1_mlnib")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
@@ -74,13 +75,11 @@ replication_config = SubResource("SceneReplicationConfig_hqwwb")
 visibility_update_mode = 1
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=538490397]
-transform = Transform3D(0.3, 0, 0, 0, 0, -0.3, 0, 0.3, 0, 0, 0, 0)
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_mlnib")
 
-[node name="Bomb" type="Node3D" parent="." unique_id=1445457924]
-transform = Transform3D(0.3, 0, 0, 0, 0.3, 0, 0, 0, 0.3, 0, 0, 0)
-
-[node name="Sphere" type="MeshInstance3D" parent="Bomb" unique_id=2087723509]
-transform = Transform3D(1, 0, 0, 0, 0, -1, 0, 1, 0, 0, 0, 0)
+[node name="Sphere" type="MeshInstance3D" parent="." unique_id=2087723509]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, -1, 0, 1, -4.371139e-08, 0, 0, 0)
 mesh = SubResource("ArrayMesh_kdide")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_4g3cx")

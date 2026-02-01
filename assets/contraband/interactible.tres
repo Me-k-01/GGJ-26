@@ -8,4 +8,5 @@ shader = ExtResource("1_8d0sh")
 shader_parameter/spin_speed = 1.0
 shader_parameter/bounce_amplitude = 0.5
 shader_parameter/bounce_frequency = 1.0
-shader_parameter/base_color = Color(3.657937e-06, 0.8887573, 0.62453705, 1)
+shader_parameter/glow_color = Color(1, 0.679, 0.23, 1)
+shader_parameter/alpha = 1.0

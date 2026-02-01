@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://cdralbc5p3o4"]
 
 [ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_spx4x"]
+[ext_resource type="Material" uid="uid://dbli6t53betjl" path="res://assets/contraband/interactible_bong.tres" id="2_spx4x"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
 properties/0/path = NodePath(".:position")
@@ -84,3 +85,4 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0, 0, 0)
 [node name="Sphere" type="MeshInstance3D" parent="Bong" unique_id=793446743]
 mesh = SubResource("ArrayMesh_l50k8")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_spx4x")

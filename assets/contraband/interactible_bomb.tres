@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://dm5hm13wrv84t"]
+
+[ext_resource type="Shader" uid="uid://cp5miad5mw5ud" path="res://assets/contraband/interactible.gdshader" id="1_4dqc5"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_4dqc5")
+shader_parameter/spin_speed = 1.0
+shader_parameter/bounce_amplitude = 0.5
+shader_parameter/bounce_frequency = 1.0
+shader_parameter/color_mask = Color(0.100799985, 0.48, 0.3852, 1)
+shader_parameter/glow_color = Color(0.63, 0.427875, 0.14490001, 1)
+shader_parameter/alpha = 1.0

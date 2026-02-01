@@ -6,8 +6,9 @@ uniform float bounce_frequency : hint_range(0, 10) = 1.0; // Frequency of bounce
 
 uniform sampler2D asset_texture;
 
-//uniform vec4 color1 : source_color;
-uniform vec4 base_color : source_color = vec4(1.0, 0.679, 0.23, 1.0);
+uniform vec3 color_mask : source_color = vec3(1.0, 1.0, 1.0);
+uniform vec4 glow_color : source_color = vec4(1.0, 0.679, 0.23, 1.0); // Color of the glow
+uniform float alpha : hint_range(0, 1) = 1.0; // Color of the glow
 //uniform float threshold;
 //uniform float intensity;
 //uniform float opacity;
@@ -22,30 +23,14 @@ vec3 fresnel_glow(float amount, float intensity, vec3 color, vec3 normal, vec3 v
 	return pow((1.0 - dot(normalize(normal), normalize(view))), amount) * color * intensity;
 }
  
-
-vec3 convert_to_spin(vec3 v) { 
-    // Make the mesh spin
-    float angle = TIME * spin_speed; // Angle of rotation
-    float cos_angle = cos(angle);
-    float sin_angle = sin(angle);
-    
-    // Rotate around the Y-axis (xz-plane rotation)
-    float x = v.x * cos_angle - v.z * sin_angle;
-    float z = v.x * sin_angle + v.z * cos_angle;
-    v.x = x;
-    v.z = z;
-
-    // Add bounce effect
-    v.y += sin(TIME * bounce_frequency) * bounce_amplitude;
-	return v;
-}
-void vertex() {  
-	//VERTEX = convert_to_spin(VERTEX);
-	//NORMAL = convert_to_spin(NORMAL); 
+ 
+void vertex() {   
 }
 void fragment() { 
-	ALBEDO = texture(asset_texture, UV).rgb;
-	//ALPHA = fresnel(3.0, NORMAL, VIEW);
-	EMISSION = fresnel(3.0, NORMAL, VIEW) * base_color.rgb *10.0;
+	vec4 tex = texture(asset_texture, UV);
+	ALBEDO = tex.rgb * color_mask;
+	float fresnel_val = fresnel(3.0, NORMAL, VIEW);
+	ALPHA = fresnel_val * (1.0-alpha) + alpha * tex.a;
+	EMISSION = fresnel_val * glow_color.rgb *10.0;
 }
 	

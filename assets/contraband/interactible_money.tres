@@ -1,0 +1,14 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://djr4umu4ex8up"]
+
+[ext_resource type="Shader" uid="uid://cp5miad5mw5ud" path="res://assets/contraband/interactible.gdshader" id="1_w8swc"]
+[ext_resource type="Texture2D" uid="uid://mr1m524ohlh0" path="res://assets/contraband/cash_bundle_0.jpg" id="2_dgepa"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_w8swc")
+shader_parameter/spin_speed = 1.0
+shader_parameter/bounce_amplitude = 0.5
+shader_parameter/bounce_frequency = 1.0
+shader_parameter/asset_texture = ExtResource("2_dgepa")
+shader_parameter/glow_color = Color(1, 0.679, 0.23, 1)
+shader_parameter/alpha = 1.0

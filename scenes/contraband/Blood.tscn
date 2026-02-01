@@ -1,27 +1,7 @@
 [gd_scene format=3 uid="uid://dxugjo1uqnc7b"]
 
-[ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_nkdnx"]
+[ext_resource type="Material" uid="uid://bth1plpdy4jd4" path="res://assets/contraband/interactible_blood.tres" id="2_i3lbr"]
 [ext_resource type="Texture2D" uid="uid://cnd3ghfsq722s" path="res://assets/contraband/Blood_Stain_realistic-blood-stain-on-transparent-surface-depicting-a-dramatic-scene-of-potential-injury-or-violence-real-blood-stain-on-transparent-background-free-png.png" id="2_tme1b"]
-
-[sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
-properties/0/path = NodePath(".:position")
-properties/0/spawn = true
-properties/0/replication_mode = 1
-properties/1/path = NodePath(".:rotation")
-properties/1/spawn = true
-properties/1/replication_mode = 1
-properties/2/path = NodePath(".:linear_velocity")
-properties/2/spawn = true
-properties/2/replication_mode = 1
-properties/3/path = NodePath(".:angular_velocity")
-properties/3/spawn = true
-properties/3/replication_mode = 1
-properties/4/path = NodePath(".:held_by_id")
-properties/4/spawn = true
-properties/4/replication_mode = 1
-
-[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_i3lbr"]
-points = PackedVector3Array(-1, 0, -1, -1, 0, 1, 1, 0, -1, 1, 0, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qufw8"]
 resource_name = "Material"
@@ -62,23 +42,7 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_1fjm2")
 
-[node name="Blood" type="RigidBody3D" unique_id=1595605640]
-collision_layer = 5
-collision_mask = 6
-mass = 10.0
-script = ExtResource("1_nkdnx")
-
-[node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
-replication_config = SubResource("SceneReplicationConfig_hqwwb")
-visibility_update_mode = 1
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=814690889]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025301456, 0, -0.046314478)
-shape = SubResource("ConvexPolygonShape3D_i3lbr")
-
-[node name="Blood_Stain" type="Node3D" parent="." unique_id=1972910837]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.025301456, 0, -0.046314478)
-
-[node name="Plane" type="MeshInstance3D" parent="Blood_Stain" unique_id=1639560470]
+[node name="Blood decals" type="MeshInstance3D" unique_id=1639560470]
 mesh = SubResource("ArrayMesh_w7r76")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_i3lbr")

@@ -28,6 +28,14 @@
 [ext_resource type="PackedScene" uid="uid://cujou0ngjhhc2" path="res://scenes/furnitures/lamp.tscn" id="26_0uhm0"]
 [ext_resource type="Material" uid="uid://ctokw0pa0xp7" path="res://assets/house/wood.tres" id="27_0uhm0"]
 [ext_resource type="PackedScene" uid="uid://4pe0cdr42dh5" path="res://scenes/environment/_sb_env.tscn" id="27_wx1er"]
+[ext_resource type="PackedScene" uid="uid://g6cvmmqkj2a0" path="res://scenes/contraband/Diamond.tscn" id="29_c6ike"]
+[ext_resource type="PackedScene" uid="uid://cdralbc5p3o4" path="res://scenes/contraband/Bong.tscn" id="29_vep5k"]
+[ext_resource type="PackedScene" uid="uid://cfpw0rkokv1vp" path="res://scenes/contraband/Cash.tscn" id="30_w3str"]
+[ext_resource type="PackedScene" uid="uid://8xvfn68xykqh" path="res://scenes/contraband/Bomb.tscn" id="32_4ce6n"]
+[ext_resource type="PackedScene" uid="uid://d0up6t4hlvfhv" path="res://scenes/contraband/Flour.tscn" id="33_pr0sr"]
+[ext_resource type="PackedScene" uid="uid://bdqg2kbq02c75" path="res://scenes/contraband/Candies.tscn" id="34_bkqbj"]
+[ext_resource type="PackedScene" uid="uid://dxugjo1uqnc7b" path="res://scenes/contraband/Blood.tscn" id="35_bkqbj"]
+[ext_resource type="PackedScene" uid="uid://clixpyt5q2srq" path="res://scenes/contraband/Blunt.tscn" id="36_len8j"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_vwhm0"]
 
@@ -306,3 +314,53 @@ environment = SubResource("Environment_qb4jd")
 transform = Transform3D(1, 0, 0, 0, -0.5, 0.866025, 0, -0.866025, -0.5, 0, 4, 0)
 shadow_enabled = true
 shadow_blur = 0.5
+
+[node name="Contraband" type="Node3D" parent="." unique_id=1682293327]
+
+[node name="Diamond" parent="Contraband" unique_id=171546880 instance=ExtResource("29_c6ike")]
+transform = Transform3D(1, 0, 0, 0, 0.87944096, 0.476008, 0, -0.476008, 0.87944096, 0.03250867, 1.0813193, -6.3342266)
+
+[node name="Bong" parent="Contraband" unique_id=679400702 instance=ExtResource("29_vep5k")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.906937, 0.66958714, 1.0052576)
+
+[node name="Cash Bundle" parent="Contraband" unique_id=1836830597 instance=ExtResource("30_w3str")]
+transform = Transform3D(0.8373754, 0, -0.54662824, 0, 1, 0, 0.54662824, 0, 0.8373754, -0.021776825, 1.1176083, -7.3461943)
+
+[node name="Cash Bundle2" parent="Contraband" unique_id=1703475911 instance=ExtResource("30_w3str")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32012105, 1.099074, -7.376094)
+
+[node name="Cash Bundle3" parent="Contraband" unique_id=1652212546 instance=ExtResource("30_w3str")]
+transform = Transform3D(0.80505955, 0, 0.59319407, 0, 1, 0, -0.59319407, 0, 0.80505955, 0.6079698, 1.1176083, -6.758868)
+
+[node name="Cash Bundle4" parent="Contraband" unique_id=1019506951 instance=ExtResource("30_w3str")]
+transform = Transform3D(-0.1377384, 0, 0.9904686, 0, 1, 0, -0.9904686, 0, -0.1377384, -0.3188681, 1.099074, -7.1130805)
+
+[node name="Cash Bundle5" parent="Contraband" unique_id=1184463985 instance=ExtResource("30_w3str")]
+transform = Transform3D(0.8373754, 0, -0.54662824, 0, 1, 0, 0.54662824, 0, 0.8373754, -0.021776825, 1.1176083, -7.018889)
+
+[node name="Cash Bundle6" parent="Contraband" unique_id=1868117858 instance=ExtResource("30_w3str")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32012105, 1.099074, -7.0487885)
+
+[node name="Cash Bundle7" parent="Contraband" unique_id=2008139482 instance=ExtResource("30_w3str")]
+transform = Transform3D(0.80505955, 0, 0.59319407, 0, 1, 0, -0.59319407, 0, 0.80505955, 0.4523106, 1.1176083, -6.470947)
+
+[node name="Cash Bundle8" parent="Contraband" unique_id=1177041009 instance=ExtResource("30_w3str")]
+transform = Transform3D(-0.1377384, 0, 0.9904686, 0, 1, 0, -0.9904686, 0, -0.1377384, -0.3188681, 1.099074, -6.785775)
+
+[node name="Bomb" parent="Contraband" unique_id=1546071180 instance=ExtResource("32_4ce6n")]
+transform = Transform3D(1, 0, 0, 0, 0.100986846, 0.99488777, 0, -0.99488777, 0.100986846, 5.47029, 1.8048266, -5.0894957)
+
+[node name="Flour" parent="Contraband" unique_id=1091258432 instance=ExtResource("33_pr0sr")]
+transform = Transform3D(-0.67047006, 0.73582625, 0.09502483, 0.055548146, 0.17750132, -0.98255146, -0.7398542, -0.653493, -0.1598832, -0.47635198, 1.2281327, -6.200259)
+
+[node name="Candies" parent="Contraband" unique_id=1999116973 instance=ExtResource("34_bkqbj")]
+transform = Transform3D(0.3120033, -0.950081, 0, 0.950081, 0.3120033, 0, 0, 0, 1, -5.5416026, 0.6157833, 1.1725254)
+
+[node name="Blood decals" parent="." unique_id=1639560470 instance=ExtResource("35_bkqbj")]
+transform = Transform3D(1, 0, 0, 0, 0.9998171, -0.019127643, 0, 0.019127643, 0.9998171, 6.0369606, 0.0592618, 1.4025689)
+
+[node name="Blunt" parent="." unique_id=516231144 instance=ExtResource("36_len8j")]
+transform = Transform3D(1, 0, 0, 0, -0.011990152, 0.9999281, 0, -0.9999281, -0.011990152, 0.0022598505, 1.4004291, 3.1622353)
+
+[node name="Blunt2" parent="." unique_id=1718272393 instance=ExtResource("36_len8j")]
+transform = Transform3D(0.7795676, 0.6263182, 0, 0.00750965, -0.009347134, 0.9999281, 0.62627316, -0.7795116, -0.011990152, -0.37237886, 1.3968202, 2.8612657)

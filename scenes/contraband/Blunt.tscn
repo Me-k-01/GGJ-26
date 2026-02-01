@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://clixpyt5q2srq"]
 
 [ext_resource type="Script" uid="uid://b8hw4p714uwev" path="res://scenes/fp_level/fp_item.gd" id="1_6bdi1"]
+[ext_resource type="Material" uid="uid://csdcsrk60bk41" path="res://assets/contraband/interactible_blunt.tres" id="2_dt355"]
 
 [sub_resource type="SceneReplicationConfig" id="SceneReplicationConfig_hqwwb"]
 properties/0/path = NodePath(".:position")
@@ -143,7 +144,7 @@ shadow_mesh = SubResource("ArrayMesh_wvcdq")
 [node name="Blunt" type="RigidBody3D" unique_id=1595605640]
 collision_layer = 5
 collision_mask = 6
-mass = 10.0
+mass = 4.0
 script = ExtResource("1_6bdi1")
 
 [node name="MultiplayerSynchronizer" type="MultiplayerSynchronizer" parent="." unique_id=1821745141]
@@ -161,6 +162,7 @@ transform = Transform3D(0.15, 0, 0, 0, 0.15, 0, 0, 0, 0.15, 0.010772347, 0, -0.0
 transform = Transform3D(0.23974718, 0, 0, 0, 0.24, 0, 0, 0, 0.23974718, 0, 1.0141932, 0)
 mesh = SubResource("ArrayMesh_80xt0")
 skeleton = NodePath("")
+surface_material_override/0 = ExtResource("2_dt355")
 
 [node name="Cylinder_001" type="MeshInstance3D" parent="Blunt" unique_id=1365328008]
 transform = Transform3D(0.23240273, 0, 0, 0, 0.38100994, 0, 0, 0, 0.23240273, 0, 1.0817947, 0)
