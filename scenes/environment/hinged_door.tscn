@@ -4,25 +4,12 @@
 [ext_resource type="Material" uid="uid://ctokw0pa0xp7" path="res://assets/house/wood.tres" id="2_3xyg2"]
 [ext_resource type="Material" uid="uid://o1csxjsm4fxe" path="res://assets/house/iron.tres" id="3_76cj8"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_xukoe"]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_a78wr"]
-size = Vector3(0.19433594, 2.7329712, 0.17767334)
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_3xyg2"]
 points = PackedVector3Array(0.044938684, 4.183135, -5.588941, 0.33389297, 2.0426161, -6.0565963, 0.32634202, 2.10183, -6.0976186, 0.044938684, 4.183135, -7.794649, -0.054851115, 4.183135, -5.588941, 0.044938684, -0.107142, -5.588941, 0.33389297, 2.0426161, -6.138425, -0.054851115, 4.183135, -7.794649, 0.044938684, -0.107142, -7.794649, -0.331112, 2.0426161, -6.0565963, -0.054851115, -0.107142, -5.588941, -0.054851115, -0.107142, -7.794649, -0.331112, 2.0426161, -6.138425, -0.32362613, 1.9829822, -6.0976186)
 
 [node name="HingedDoor" type="Node3D" unique_id=273001971]
 
 [node name="Hinge" type="StaticBody3D" parent="." unique_id=1935313362]
-
-[node name="HingeMesh" type="MeshInstance3D" parent="Hinge" unique_id=1008433448]
-transform = Transform3D(0.2, 0, 0, 0, 2.8, 0, 0, 0, 0.2, 0, 1.35, -0.2)
-mesh = SubResource("BoxMesh_xukoe")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Hinge" unique_id=1343688889]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0034179688, 1.3469177, -0.20204467)
-shape = SubResource("BoxShape3D_a78wr")
 
 [node name="Door" type="RigidBody3D" parent="." unique_id=504040393]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.07741642, -6.9985785)
