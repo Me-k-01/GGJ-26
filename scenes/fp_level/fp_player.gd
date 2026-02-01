@@ -9,6 +9,7 @@ var is_local_player = false
 @onready var nickname: Label3D = $PlayerNick/Nickname
 var players_container = null
 var player_inventory: PlayerInventory
+@onready var _control = get_node("Control")
 
 @export_category("Mouvements")
 var locked_cursor = false
@@ -29,10 +30,15 @@ enum SkinColor { BLUE, YELLOW, GREEN, RED }
 @export var yellow_texture : CompressedTexture2D
 @export var green_texture : CompressedTexture2D
 @export var red_texture : CompressedTexture2D
-@onready var _bottom_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
-@onready var _chest_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
-@onready var _face_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
-@onready var _limbs_head_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
+#@onready var _hat_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/head/BarbarianHat")
+@onready var _cape_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/chest/Barbarian_Cape")
+@onready var _chest_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/chest/MeshInstance3D")
+@onready var _left_arm_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_ArmLeft")
+@onready var _right_arm_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_ArmRight")
+@onready var _body_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Body")
+@onready var _head_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_Head")
+@onready var _left_leg_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_LegLeft")
+@onready var _right_leg_mesh: MeshInstance3D = get_node("Rig/Skeleton3D/Barbarian_LegRight")
 
 @export_group("Holding Objects")
 @export var throw_force = 7.5
@@ -52,10 +58,13 @@ func _enter_tree():
 
 func _make_invisible_but_keep_shadow():
 	if is_multiplayer_authority():
-		var meshes = [_bottom_mesh, _chest_mesh, _face_mesh, _limbs_head_mesh]
+		var meshes = [_cape_mesh, _chest_mesh,
+			_left_arm_mesh, _right_arm_mesh, _body_mesh,
+			_head_mesh, _left_leg_mesh, _right_leg_mesh]
 		for mesh in meshes:
 			if mesh:
 				mesh.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_SHADOWS_ONLY
+		_control.visible = true
 
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
@@ -261,6 +270,7 @@ func get_texture_from_name(skin_color: SkinColor) -> CompressedTexture2D:
 		SkinColor.YELLOW: return yellow_texture
 		_: return blue_texture
 
+"""
 @rpc("any_peer", "reliable")
 func set_player_skin(skin_name: SkinColor) -> void:
 	var texture = get_texture_from_name(skin_name)
@@ -269,6 +279,7 @@ func set_player_skin(skin_name: SkinColor) -> void:
 	set_mesh_texture(_chest_mesh, texture)
 	set_mesh_texture(_face_mesh, texture)
 	set_mesh_texture(_limbs_head_mesh, texture)
+"""
 
 func set_mesh_texture(mesh_instance: MeshInstance3D, texture: CompressedTexture2D) -> void:
 	if mesh_instance:
